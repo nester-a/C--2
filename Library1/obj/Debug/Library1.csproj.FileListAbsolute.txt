@@ -1,0 +1,6 @@
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library1\bin\Debug\Library1.dll
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library1\bin\Debug\Library1.pdb
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library1\obj\Debug\Library1.csprojAssemblyReference.cache
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library1\obj\Debug\Library1.csproj.CoreCompileInputs.cache
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library1\obj\Debug\Library1.dll
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library1\obj\Debug\Library1.pdb
