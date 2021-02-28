@@ -47,19 +47,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
+    <Compile Include="Background.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Star.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -72,6 +75,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\asteroid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\blackhole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\planet_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\star_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\bg1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\buttonExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\buttonExitSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\buttonNewGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\buttonNewGameSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\buttonRecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\buttonRecordSelected.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
