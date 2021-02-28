@@ -25,4 +25,20 @@ namespace Asteroids
             Size = new Size(newSize, newSize);
         }
     }
+    class StarForSpalshScreen : Star
+    {
+        public StarForSpalshScreen(Point pos, Point dir, Size size) : base(pos, dir, size) { }
+        Random random = new Random();
+
+        public override void Draw()
+        {
+            SplashScreen.Buffer.Graphics.DrawImage(new Bitmap(Resources.star_1, new Size(Size.Width, Size.Height)), Pos.X, Pos.Y);
+        }
+
+        public override void Update()
+        {
+            var newSize = random.Next(5, 21);
+            Size = new Size(newSize, newSize);
+        }
+    }
 }

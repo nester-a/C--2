@@ -23,10 +23,16 @@ namespace Asteroids
             form.StartPosition = FormStartPosition.CenterScreen;
             form.Text = "Asteroids";
 
-            Game.Init(form);
+
+            SplashScreen.Init(form);
             form.Show();
-            Game.Draw();
+            SplashScreen.Draw();
             Application.Run(form);
+
+            //Game.Init(form);
+            //form.Show();
+            //Game.Draw();
+            //Application.Run(form);
         }
     }
 }

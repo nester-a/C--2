@@ -23,4 +23,13 @@ namespace Asteroids
             Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.bg1, new Size(Size.Height, Size.Width)), Pos.X, Pos.Y);
         }
     }
+
+    class BackgroundForSplashScreen : Background
+    {
+        public BackgroundForSplashScreen(Point _pos, Size _size) : base(_pos, _size) { }
+        public void Draw()
+        {
+            SplashScreen.Buffer.Graphics.DrawImage(new Bitmap(Resources.bg1, new Size(Size.Height, Size.Width)), Pos.X, Pos.Y);
+        }
+    }
 }

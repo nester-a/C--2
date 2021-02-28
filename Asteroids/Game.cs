@@ -18,6 +18,12 @@ namespace Asteroids
         private static Planet _planet;
         private static Background _background;
 
+        //кнопки
+        private static MyButton _start;
+        private static MyButton _record;
+        private static MyButton _exit;
+        private static Menu _menu;
+
         public static int Width { get; set; }
         public static int Height { get; set; }
         public static BufferedGraphics Buffer
@@ -64,6 +70,10 @@ namespace Asteroids
             foreach (var asteroid in _asteroids)
                 asteroid.Draw();
 
+            //кнопки
+            _menu.Draw();
+            //кнопки
+
             _buffer.Render();
         }
         public static void Update()
@@ -102,6 +112,12 @@ namespace Asteroids
                 var size = random.Next(5, 21);
                 _stars[i] = new Star(new Point(x, y), new Point(-i, -i), new Size(size, size));
             }
+
+            //кнопки
+            _start = new StartButton(new Point(300, 200), new Size(100, 200));
+            _record = new RecordButton(new Point(300, 300), new Size(100, 200));
+            _exit = new ExitButton(new Point(300, 400), new Size(100, 200));
+            _menu = new Menu(_start, _record, _exit);
         }
     }
 }
