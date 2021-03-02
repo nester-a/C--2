@@ -1,9 +1,0 @@
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\bin\Debug\Library2.dll
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\bin\Debug\Library2.pdb
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\bin\Debug\Library1.dll
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\bin\Debug\Library1.pdb
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\obj\Debug\Library2.csprojAssemblyReference.cache
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\obj\Debug\Library2.csproj.CoreCompileInputs.cache
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\obj\Debug\Library2.csproj.CopyComplete
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\obj\Debug\Library2.dll
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson1\Library2\obj\Debug\Library2.pdb
