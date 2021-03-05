@@ -153,6 +153,16 @@ namespace Asteroids.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap laserBeam {
+            get {
+                object obj = ResourceManager.GetObject("laserBeam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap planet_2 {
             get {
                 object obj = ResourceManager.GetObject("planet_2", resourceCulture);

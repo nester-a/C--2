@@ -48,9 +48,9 @@
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
     <Compile Include="Background.cs" />
+    <Compile Include="Colission.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MyButton.cs" />
+    <Compile Include="LaserBeam.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,7 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.cs" />
+    <Compile Include="SpaceObject.cs" />
     <Compile Include="Star.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="pic\buttonRecordSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\laserBeam.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Asteroids
 {
-    class Star : Asteroid
+    class Star : SpaceObject
     {
         public Star(Point pos, Point dir, Size size) : base(pos, dir, size) { }
-        Random random = new Random();
+        static Random random = new Random();
 
         public override void Draw()
         {
@@ -21,24 +21,12 @@ namespace Asteroids
 
         public override void Update()
         {
-            var newSize = random.Next(5, 21);
-            Size = new Size(newSize, newSize);
-        }
-    }
-    class StarForSpalshScreen : Star
-    {
-        public StarForSpalshScreen(Point pos, Point dir, Size size) : base(pos, dir, size) { }
-        Random random = new Random();
-
-        public override void Draw()
-        {
-            SplashScreen.Buffer.Graphics.DrawImage(new Bitmap(Resources.star_1, new Size(Size.Width, Size.Height)), Pos.X, Pos.Y);
-        }
-
-        public override void Update()
-        {
-            var newSize = random.Next(5, 21);
-            Size = new Size(newSize, newSize);
+            if (Pos.X < 0)
+            {
+                Pos.X = Game.Width;
+                Pos.Y = random.Next(1, Game.Height + 1);
+            }
+            Pos.X -= 50;
         }
     }
 }

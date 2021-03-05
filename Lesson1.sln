@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroids", "Asteroids\Asteroids.csproj", "{98704278-1E04-4346-BE46-10D0CD832D8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library1", "Library1\Library1.csproj", "{D71A69CA-2A83-45DA-B450-3CE730894CC6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library2", "Library2\Library2.csproj", "{A2411212-9887-4E7F-8357-E5EC65C7BF28}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{98704278-1E04-4346-BE46-10D0CD832D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98704278-1E04-4346-BE46-10D0CD832D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98704278-1E04-4346-BE46-10D0CD832D8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D71A69CA-2A83-45DA-B450-3CE730894CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D71A69CA-2A83-45DA-B450-3CE730894CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D71A69CA-2A83-45DA-B450-3CE730894CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D71A69CA-2A83-45DA-B450-3CE730894CC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2411212-9887-4E7F-8357-E5EC65C7BF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2411212-9887-4E7F-8357-E5EC65C7BF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2411212-9887-4E7F-8357-E5EC65C7BF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2411212-9887-4E7F-8357-E5EC65C7BF28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

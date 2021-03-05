@@ -8,25 +8,19 @@ using System.Threading.Tasks;
 
 namespace Asteroids
 {
-    public class Asteroid
+    class Asteroid : SpaceObject
     {
-        protected Point Pos;
-        protected Point Dir;
-        protected Size Size;
-
-        public Asteroid(Point pos, Point dir, Size size)
+        public Asteroid(Point pos, Point dir, Size size) : base (pos, dir, size)
         {
-            Pos = pos;
-            Dir = dir;
-            Size = size;
+
         }
 
-        public virtual void Draw()
+        public override void Draw()
         {
             Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.asteroid, new Size(Size.Width, Size.Height)), Pos.X, Pos.Y);
         }
 
-        public virtual void Update()
+        public override void Update()
         {
             Pos.X = Pos.X + Dir.X;
             Pos.Y = Pos.Y + Dir.Y;
@@ -36,5 +30,10 @@ namespace Asteroids
             if (Pos.Y < 0) Dir.Y = -Dir.Y;
             if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
         }
+        //public override void ChangeDirection()
+        //{
+        //    Dir.X = -Dir.X;
+        //    Dir.Y = -Dir.Y;
+        //}
     }
 }

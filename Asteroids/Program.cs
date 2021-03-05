@@ -24,15 +24,12 @@ namespace Asteroids
             form.Text = "Asteroids";
 
 
-            SplashScreen.Init(form);
-            form.Show();
-            SplashScreen.Draw();
-            Application.Run(form);
+            
 
-            //Game.Init(form);
-            //form.Show();
-            //Game.Draw();
-            //Application.Run(form);
+            Game.Init(form);
+            form.Show();
+            Game.Draw();
+            Application.Run(form);
         }
     }
 }

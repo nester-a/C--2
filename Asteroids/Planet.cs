@@ -8,18 +8,16 @@ using System.Threading.Tasks;
 
 namespace Asteroids
 {
-    class Planet
+    class Planet : SpaceObject
     {
-        protected Point Pos;
-        protected Size Size;
-        private Random rnd = new Random();
+        private static Random random = new Random();
+        //Bitmap PlanetIMG;
 
-        public Planet(Point _pos, Size _size)
+        public Planet(Point _pos, Point _dir, Size _size) : base (_pos, _dir, _size)
         {
-            Pos = _pos;
-            Size = _size;
+            //здесь будет рандомизация планеты
         }
-        public void Draw()
+        public override void Draw()
         {
             Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_2, new Size(Size.Height, Size.Width)), Pos.X, Pos.Y);
         }
@@ -27,18 +25,14 @@ namespace Asteroids
         {
             //TODO потом
         }
-        public void Update()
+        public override void Update()
         {
-            Size tmp = Size.Empty;
-            if (Size.Height - 3 < 3 || Size.Width - 2 < 2)
+            if (Pos.X < -500)
             {
-                tmp = new Size(600, 900);
+                Pos.X = Game.Width;
+                Pos.Y = random.Next(1, Game.Height + 1);
             }
-            else
-            {
-                tmp = new Size(Size.Width - 2, Size.Height - 3);
-            }
-            Size = tmp;
+            Pos.X -= 10;
         }
     }
 }

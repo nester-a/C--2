@@ -13,16 +13,13 @@ namespace Asteroids
     {
         private static BufferedGraphicsContext _context;
         private static BufferedGraphics _buffer;
-        private static Asteroid[] _asteroids;
-        private static Asteroid[] _stars;
+        private static List<SpaceObject> _asteroids;
+        private static List<SpaceObject> _stars;
         private static Planet _planet;
         private static Background _background;
+        private static LaserBeam _laserBeam;
 
-        //кнопки
-        private static MyButton _start;
-        private static MyButton _record;
-        private static MyButton _exit;
-        private static Menu _menu;
+        
 
         public static int Width { get; set; }
         public static int Height { get; set; }
@@ -70,20 +67,25 @@ namespace Asteroids
             foreach (var asteroid in _asteroids)
                 asteroid.Draw();
 
-            //кнопки
-            _menu.Draw();
-            //кнопки
+            _laserBeam.Draw();//лазер
 
             _buffer.Render();
         }
         public static void Update()
         {
             foreach (var asteroid in _asteroids)
+            {
+                //if (asteroid.Colission(asteroid))
+                //{
+                //    asteroid.ChangeDirection();
+                //}
                 asteroid.Update();
+            }
 
-            var random = new Random();
-            var randomStar = random.Next(0, _stars.Length);
-            _stars[randomStar].Update();
+            foreach (var star in _stars)
+                star.Update();
+
+            _laserBeam.Update();
 
             _planet.Update();
         }
@@ -93,31 +95,27 @@ namespace Asteroids
 
             _background = new Background(new Point(0, 0), new Size(600, 800));
 
-            _planet = new Planet(new Point(100, 100), new Size(200, 300));
+            _planet = new Planet(new Point(100, 100), new Point(0, 0), new Size(200, 300));
 
-            _asteroids = new Asteroid[15];
-            for (int i = 0; i < _asteroids.Length; i++)
+            _asteroids = new List<SpaceObject>();
+            for (int i = 0; i < 15; i++)
             {
                 var x = random.Next(0, 801);
                 var y = random.Next(0, 601);
                 var size = random.Next(10, 40);
-                _asteroids[i] = new Asteroid(new Point(x, y), new Point(-i, -i), new Size(size, size));
+                _asteroids.Add(new Asteroid(new Point(x, y), new Point(-i, -i), new Size(size, size)));
             }
 
-            _stars = new Asteroid[40];
-            for (int i = 0; i < _stars.Length; i++)
+            _stars = new List<SpaceObject>();
+            for (int i = 0; i < 40; i++)
             {
                 var x = random.Next(0, 801);
                 var y = random.Next(0, 601);
                 var size = random.Next(5, 21);
-                _stars[i] = new Star(new Point(x, y), new Point(-i, -i), new Size(size, size));
+                _stars.Add(new Star(new Point(x, y), new Point(-i, -i), new Size(size, size)));
             }
 
-            //кнопки
-            _start = new StartButton(new Point(300, 200), new Size(100, 200));
-            _record = new RecordButton(new Point(300, 300), new Size(100, 200));
-            _exit = new ExitButton(new Point(300, 400), new Size(100, 200));
-            _menu = new Menu(_start, _record, _exit);
+            _laserBeam = new LaserBeam(new Point(100, 200), new Point(0, 0), new Size(20, 40));
         }
     }
 }
