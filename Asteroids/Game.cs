@@ -18,8 +18,9 @@ namespace Asteroids
         private static Planet _planet;
         private static Background _background;
         private static LaserBeam _laserBeam;
+        private static Random random;
 
-        
+
 
         public static int Width { get; set; }
         public static int Height { get; set; }
@@ -37,14 +38,22 @@ namespace Asteroids
             g = form.CreateGraphics();
 
             Width = form.ClientSize.Width;
+            if(Width <= 0 || Width > 1000)
+            {
+                throw new ArgumentOutOfRangeException("Ошибка ширины окна", "Заданы неверные размеры ширины окна.");
+            }
             Height = form.ClientSize.Height;
+            if (Height <= 0 || Height > 1000)
+            {
+                throw new ArgumentOutOfRangeException("Ошибка высоты окна", "Заданы неверные размеры высоты окна.");
+            }
 
             _buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
 
             Load();
 
             Timer timer = new Timer();
-            timer.Interval = 10;
+            timer.Interval = 100;
             timer.Start();
             timer.Tick += Timer_Tick;
         }
@@ -73,13 +82,28 @@ namespace Asteroids
         }
         public static void Update()
         {
+            for (int i = 0; i < _asteroids.Count; i++)
+            {
+                for (int j = 0; j < _asteroids.Count; j++)
+                {
+                    if (i == j) continue;
+                    if (_asteroids[i].Colission(_asteroids[j]))
+                    {
+                        _asteroids[i].ChangeDirection();
+                        _asteroids[j].ChangeDirection();
+                        _asteroids[i].Update();
+                        _asteroids[j].Update();
+                    }
+                    _asteroids[i].Update();
+                }
+            }
             foreach (var asteroid in _asteroids)
             {
-                //if (asteroid.Colission(asteroid))
-                //{
-                //    asteroid.ChangeDirection();
-                //}
-                asteroid.Update();
+                if (asteroid.Colission(_laserBeam))
+                {
+                    _asteroids.Remove(asteroid);
+                    break;
+                }
             }
 
             foreach (var star in _stars)
@@ -91,7 +115,7 @@ namespace Asteroids
         }
         public static void Load()
         {
-            var random = new Random();
+            random = new Random();
 
             _background = new Background(new Point(0, 0), new Size(600, 800));
 
@@ -103,7 +127,7 @@ namespace Asteroids
                 var x = random.Next(0, 801);
                 var y = random.Next(0, 601);
                 var size = random.Next(10, 40);
-                _asteroids.Add(new Asteroid(new Point(x, y), new Point(-i, -i), new Size(size, size)));
+                _asteroids.Add(new Asteroid(new Point(x, y), new Point(1, 1), new Size(size, size)));
             }
 
             _stars = new List<SpaceObject>();

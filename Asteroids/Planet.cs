@@ -30,7 +30,7 @@ namespace Asteroids
             if (Pos.X < -500)
             {
                 Pos.X = Game.Width;
-                Pos.Y = random.Next(1, Game.Height + 1);
+                Pos.Y = random.Next(1, Game.Height - Size.Height);
             }
             Pos.X -= 10;
         }

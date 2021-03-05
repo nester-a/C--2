@@ -16,15 +16,21 @@ namespace Asteroids
         {
             var form = new Form();
 
-            form.MinimumSize = new System.Drawing.Size(800, 600);
-            form.MaximumSize = new System.Drawing.Size(800, 600);
-            form.MaximizeBox = false;
-            form.MinimizeBox = false;
+            try
+            {
+                form.MinimumSize = new System.Drawing.Size(800, 600);
+                form.MaximumSize = new System.Drawing.Size(800, 600);
+            }
+            catch(ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            //form.MaximizeBox = false;
+            //form.MinimizeBox = false;
             form.StartPosition = FormStartPosition.CenterScreen;
             form.Text = "Asteroids";
 
-
-            
 
             Game.Init(form);
             form.Show();

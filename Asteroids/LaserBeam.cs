@@ -21,7 +21,7 @@ namespace Asteroids
 
         public override void Update()
         {
-            Pos.X += 100;
+            Pos.X += 1;
         }
     }
 }
