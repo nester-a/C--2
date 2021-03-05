@@ -101,6 +101,12 @@ namespace Asteroids
             {
                 if (asteroid.Colission(_laserBeam))
                 {
+                    //создание новых астероидов при столкновении с лазером
+                    //var x = random.Next(0, 801);
+                    //var y = random.Next(0, 601);
+                    //var size = random.Next(10, 40);
+                    //_asteroids.Add(new Asteroid(new Point(x, y), new Point(1, 1), new Size(size, size)));
+
                     _asteroids.Remove(asteroid);
                     break;
                 }

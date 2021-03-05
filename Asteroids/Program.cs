@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,19 +21,23 @@ namespace Asteroids
             {
                 form.MinimumSize = new System.Drawing.Size(800, 600);
                 form.MaximumSize = new System.Drawing.Size(800, 600);
+                form.MaximizeBox = false;
+                form.MinimizeBox = false;
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.Text = "Asteroids";
+                Game.Init(form);
             }
             catch(ArgumentOutOfRangeException ex)
             {
-                Console.WriteLine(ex.Message);
+                System.Media.SystemSounds.Hand.Play();
+                Debug.WriteLine(ex.Message);
+            }
+            catch (GameObjectException ex)
+            {
+                System.Media.SystemSounds.Hand.Play();
+                Debug.WriteLine(ex.Message);
             }
 
-            //form.MaximizeBox = false;
-            //form.MinimizeBox = false;
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Text = "Asteroids";
-
-
-            Game.Init(form);
             form.Show();
             Game.Draw();
             Application.Run(form);

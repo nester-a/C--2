@@ -50,6 +50,7 @@
     <Compile Include="Background.cs" />
     <Compile Include="Colission.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameObjectException.cs" />
     <Compile Include="LaserBeam.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />

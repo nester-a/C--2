@@ -30,10 +30,10 @@ namespace Asteroids
             if (Pos.Y < 0) Dir.Y = -Dir.Y;
             if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
         }
-        //public override void ChangeDirection()
-        //{
-        //    Dir.X = -Dir.X;
-        //    Dir.Y = -Dir.Y;
-        //}
+        public override void ChangeDirection()
+        {
+            Dir.X = -Dir.X;
+            Dir.Y = -Dir.Y;
+        }
     }
 }
