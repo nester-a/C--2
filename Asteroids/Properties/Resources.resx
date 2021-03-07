@@ -145,11 +145,32 @@
   <data name="buttonRecordSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pic\buttonRecordSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fuel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pic\fuel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="laserBeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pic\laserBeam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="planet_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pic\planet_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="planet_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pic\planet_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="planet_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pic\planet_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="planet_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pic\planet_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="planet_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pic\planet_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="planet_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pic\planet_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spaceship" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\pic\spaceship.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="star_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\pic\star_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

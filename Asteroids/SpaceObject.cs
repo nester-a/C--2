@@ -29,6 +29,16 @@ namespace Asteroids
             if (size.Height < 0) throw new GameObjectException("Ошибка! Высота КосмическогоОбъекта не может быть отрицательной.");
             if (size.Width > Game.Width) throw new GameObjectException("Ошибка! Высота КосмическогоОбъекта не может превышать высоту окна в два раза.");
         }
+        protected SpaceObject(Point pos, Point dir)
+        {
+            Pos = pos;
+            if (Pos.X < 0) throw new GameObjectException("Ошибка! Координаты по X позиции КосмическогоОбъекта не могут быть отрицательными.");
+            if (Pos.Y < 0) throw new GameObjectException("Ошибка! Координаты по Y позиции КосмическогоОбъекта не могут быть отрицательными.");
+            if (Pos.X > Game.Width + 100) throw new GameObjectException("Ошибка! Координаты по X позиции КосмическогоОбъекта не могут быть больше ширины окна.");
+            if (Pos.Y > Game.Height + 100) throw new GameObjectException("Ошибка! Координаты по X позиции КосмическогоОбъекта не могут быть больше ширины окна.");
+
+            Dir = dir;
+        }
 
         public Rectangle Rect => new Rectangle(Pos, Size);
 

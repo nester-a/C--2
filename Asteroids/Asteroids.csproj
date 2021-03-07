@@ -49,6 +49,7 @@
     <Compile Include="Asteroid.cs" />
     <Compile Include="Background.cs" />
     <Compile Include="Colission.cs" />
+    <Compile Include="Fuel.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameObjectException.cs" />
     <Compile Include="LaserBeam.cs" />
@@ -60,6 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ship.cs" />
     <Compile Include="SpaceObject.cs" />
     <Compile Include="Star.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -118,6 +120,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="pic\laserBeam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\spaceship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\planet_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\planet_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\planet_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\planet_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\planet_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pic\fuel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

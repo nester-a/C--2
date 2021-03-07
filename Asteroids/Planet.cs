@@ -11,15 +11,36 @@ namespace Asteroids
     class Planet : SpaceObject
     {
         private static Random random = new Random();
+        private int index;
         //Bitmap PlanetIMG;
 
-        public Planet(Point _pos, Point _dir, Size _size) : base (_pos, _dir, _size)
+        public Planet(Point _pos, Point _dir) : base (_pos, _dir)
         {
-            //здесь будет рандомизация планеты
+            index = random.Next(1, 7);
         }
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_2, new Size(Size.Height, Size.Width)), Pos.X, Pos.Y);
+            switch (index)
+            {
+                case 1:
+                    Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_1, new Size(357, 391)), Pos.X, Pos.Y);
+                    break;
+                case 2:
+                    Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_2, new Size(267, 150)), Pos.X, Pos.Y);
+                    break;
+                case 3:
+                    Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_3, new Size(433, 248)), Pos.X, Pos.Y);
+                    break;
+                case 4:
+                    Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_4, new Size(249, 255)), Pos.X, Pos.Y);
+                    break;
+                case 5:
+                    Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_5, new Size(352, 365)), Pos.X, Pos.Y);
+                    break;
+                case 6:
+                    Game.Buffer.Graphics.DrawImage(new Bitmap(Resources.planet_6, new Size(256, 263)), Pos.X, Pos.Y);
+                    break;
+            }
         }
         private void RandomPlanet()
         {
@@ -29,6 +50,7 @@ namespace Asteroids
         {
             if (Pos.X < -500)
             {
+                index = random.Next(1, 7);
                 Pos.X = Game.Width;
                 Pos.Y = random.Next(1, Game.Height - Size.Height);
             }

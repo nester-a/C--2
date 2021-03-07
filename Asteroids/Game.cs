@@ -1,6 +1,7 @@
 ﻿using Asteroids.Properties;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,9 @@ namespace Asteroids
         private static Background _background;
         private static LaserBeam _laserBeam;
         private static Random random;
-
+        private static Ship _ship;
+        private static Timer timer = new Timer();
+        private static Fuel _fuel;
 
 
         public static int Width { get; set; }
@@ -52,11 +55,30 @@ namespace Asteroids
 
             Load();
 
-            Timer timer = new Timer();
             timer.Interval = 100;
             timer.Start();
             timer.Tick += Timer_Tick;
+
+            form.KeyDown += Form_KeyDown;
+            Ship.DieEvent += GameOver;
         }
+
+        private static void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.ControlKey)
+            {
+                _laserBeam = new LaserBeam(new Point(_ship.Rect.X + 128, _ship.Rect.Y + 30), new Point(0, 0), new Size(10, 40));
+            }
+            if(e.KeyCode == Keys.Up)
+            {
+                _ship.Up();
+            }
+            if(e.KeyCode == Keys.Down)
+            {
+                _ship.Down();
+            }
+        }
+
         private static void Timer_Tick(object sender, EventArgs e)
         {
             Draw();
@@ -74,9 +96,16 @@ namespace Asteroids
             _planet.Draw();
 
             foreach (var asteroid in _asteroids)
-                asteroid.Draw();
+                asteroid?.Draw();
 
-            _laserBeam.Draw();//лазер
+            _laserBeam?.Draw();
+
+            if(_ship != null)
+            {
+                _ship.Draw();
+                Buffer.Graphics.DrawString($"Energy: {_ship.Energy}", SystemFonts.DefaultFont, Brushes.Black, 10, 10);
+            }
+            _fuel?.Draw();
 
             _buffer.Render();
         }
@@ -99,23 +128,40 @@ namespace Asteroids
             }
             foreach (var asteroid in _asteroids)
             {
-                if (asteroid.Colission(_laserBeam))
+                if (_laserBeam != null && asteroid.Colission(_laserBeam))
                 {
-                    //создание новых астероидов при столкновении с лазером
-                    //var x = random.Next(0, 801);
-                    //var y = random.Next(0, 601);
-                    //var size = random.Next(10, 40);
-                    //_asteroids.Add(new Asteroid(new Point(x, y), new Point(1, 1), new Size(size, size)));
-
+                    Debug.WriteLine($"Лазер попал в астероид по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
                     _asteroids.Remove(asteroid);
+                    _laserBeam = null;
+                    break;
+                }
+                if (_ship != null && asteroid.Colission(_ship))
+                {
+                    Debug.WriteLine($"Астероид столкнулся с кораблём по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
+                    _asteroids.Remove(asteroid);
+                    int damage = random.Next(10, 33);
+                    _ship.DamageShip(damage);
+                    Debug.WriteLine($"Корабль получил урон равный {damage}");
+                    if (_ship.Energy <= 0)
+                    {
+                        _ship.Die();
+                    }
                     break;
                 }
             }
 
+            if(_asteroids.Count % 5 == 0)
+            {
+                var x = random.Next(0, 801);
+                var y = random.Next(0, 601);
+                _fuel = new Fuel(new Point(x, y), new Point(1, 1));
+            }
+            _fuel?.Update();
+
             foreach (var star in _stars)
                 star.Update();
-
-            _laserBeam.Update();
+            
+            _laserBeam?.Update();
 
             _planet.Update();
         }
@@ -125,14 +171,14 @@ namespace Asteroids
 
             _background = new Background(new Point(0, 0), new Size(600, 800));
 
-            _planet = new Planet(new Point(100, 100), new Point(0, 0), new Size(200, 300));
+            _planet = new Planet(new Point(100, 100), new Point(0, 0));
 
             _asteroids = new List<SpaceObject>();
             for (int i = 0; i < 15; i++)
             {
                 var x = random.Next(0, 801);
                 var y = random.Next(0, 601);
-                var size = random.Next(10, 40);
+                var size = random.Next(20, 40);
                 _asteroids.Add(new Asteroid(new Point(x, y), new Point(1, 1), new Size(size, size)));
             }
 
@@ -145,7 +191,15 @@ namespace Asteroids
                 _stars.Add(new Star(new Point(x, y), new Point(-i, -i), new Size(size, size)));
             }
 
-            _laserBeam = new LaserBeam(new Point(100, 200), new Point(0, 0), new Size(20, 40));
+            _ship = new Ship(new Point(10, 400), new Point(5, 5));
         }
+
+        private static void GameOver(object sender, EventArgs e)
+        {
+            timer.Stop();
+            Buffer.Graphics.DrawString("The End", new Font(FontFamily.GenericSansSerif, 60, FontStyle.Underline), Brushes.Black, 200, 200);
+            _buffer.Render();
+        }
+
     }
 }
