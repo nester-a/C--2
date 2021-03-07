@@ -1,8 +1,0 @@
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\bin\Debug\SApp04.exe.config
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\bin\Debug\SApp04.exe
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\bin\Debug\SApp04.pdb
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\obj\Debug\SApp04.csprojAssemblyReference.cache
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\obj\Debug\SApp04.csproj.CoreCompileInputs.cache
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\obj\Debug\SApp04.exe
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\obj\Debug\SApp04.pdb
-C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson2\SApp04\bin\Debug\Test.txt

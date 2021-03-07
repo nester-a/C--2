@@ -1,5 +1,4 @@
-﻿
-using Asteroids.Properties;
+﻿using Asteroids.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,8 +10,8 @@ namespace Asteroids
 {
     class Bullet : BaseObject
     {
-
         public Bullet(Point pos, Point dir, Size size) : base(pos, dir, size) { }
+
 
         public override void Draw()
         {
@@ -21,7 +20,7 @@ namespace Asteroids
 
         public override void Update()
         {
-            Pos.X = Pos.X + 3;
+            Pos.X = Pos.X + 10;
         }
     }
 }

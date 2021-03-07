@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Asteroids
 {
-    public abstract class BaseObject : ICollision
+    abstract class BaseObject : ICollision
     {
         protected Point Pos;
         protected Point Dir;
@@ -20,19 +20,27 @@ namespace Asteroids
             Size = size;
         }
 
+        #region ICollision implementation
+
         public Rectangle Rect => new Rectangle(Pos, Size);
 
         public bool Collision(ICollision obj)
         {
-            return obj.Rect.IntersectsWith(Rect);
+            return obj.Rect.IntersectsWith(this.Rect);
         }
+
+        #endregion
 
         public abstract void Draw();
 
         public virtual void Update()
         {
-            Pos.X = Pos.X + Dir.X;
+            DoProcess();
         }
 
+        private void DoProcess()
+        {
+
+        }
     }
 }
