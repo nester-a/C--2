@@ -23,6 +23,7 @@ namespace Asteroids
         private static Ship _ship;
         private static Timer timer = new Timer();
         private static Fuel _fuel;
+        private static BattleJournal _battleJournal;
 
 
         public static int Width { get; set; }
@@ -61,7 +62,9 @@ namespace Asteroids
 
             form.KeyDown += Form_KeyDown;
             Ship.DieEvent += GameOver;
+            BattleJournal.AddString += BattleJournal_AddString;
         }
+
 
         private static void Form_KeyDown(object sender, KeyEventArgs e)
         {
@@ -78,7 +81,6 @@ namespace Asteroids
                 _ship.Down();
             }
         }
-
         private static void Timer_Tick(object sender, EventArgs e)
         {
             Draw();
@@ -126,22 +128,68 @@ namespace Asteroids
                     _asteroids[i].Update();
                 }
             }
+
+            foreach (var asteroid in _asteroids)
+            {
+                asteroid.Update();
+            }
+
             foreach (var asteroid in _asteroids)
             {
                 if (_laserBeam != null && asteroid.Colission(_laserBeam))
                 {
-                    Debug.WriteLine($"Лазер попал в астероид по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
+                    //
+                    //
+                    // запись в журнал
+                    _battleJournal.AddNote($"Лазер попал в астероид по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
+                    _battleJournal.AddNewString();
+                    //
+                    //
+                    
                     _asteroids.Remove(asteroid);
                     _laserBeam = null;
+                    _ship.IncreaseCount();
+
+                    //
+                    //
+                    // запись в журнал
+                    _battleJournal.AddNote($"Корабль уничтожил астероид. Счёт - {_ship.DestroyAsteroidCount}");
+                    _battleJournal.AddNewString();
+                    //
+                    //
+
                     break;
                 }
-                if (_ship != null && asteroid.Colission(_ship))
+                if (asteroid.Colission(_ship))
                 {
-                    Debug.WriteLine($"Астероид столкнулся с кораблём по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
+                    //
+                    //
+                    // запись в журнал
+                    _battleJournal.AddNote($"Астероид столкнулся с кораблём по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
+                    _battleJournal.AddNewString();
+                    //
+                    //
+
                     _asteroids.Remove(asteroid);
                     int damage = random.Next(10, 33);
                     _ship.DamageShip(damage);
-                    Debug.WriteLine($"Корабль получил урон равный {damage}");
+                    _ship.IncreaseCount();
+
+                    //
+                    //
+                    // запись в журнал
+                    _battleJournal.AddNote($"Корабль получил урон равный {damage}");
+                    _battleJournal.AddNewString();
+                    //
+                    //
+
+                    //
+                    //ещё одна запись в журнал
+                    _battleJournal.AddNote($"Корабль уничтожил астероид. Счёт - {_ship.DestroyAsteroidCount}");
+                    _battleJournal.AddNewString();
+                    //
+                    //
+
                     if (_ship.Energy <= 0)
                     {
                         _ship.Die();
@@ -150,20 +198,42 @@ namespace Asteroids
                 }
             }
 
-            if(_asteroids.Count % 5 == 0)
-            {
-                var x = random.Next(0, 801);
-                var y = random.Next(0, 601);
-                _fuel = new Fuel(new Point(x, y), new Point(1, 1));
-            }
-            _fuel?.Update();
-
             foreach (var star in _stars)
                 star.Update();
             
             _laserBeam?.Update();
 
             _planet.Update();
+
+            if(_ship.DestroyAsteroidCount !=0 && _ship.DestroyAsteroidCount % 5 == 0)
+            {
+                var x = random.Next(100, 300);
+                var y = random.Next(100, 300);
+                var randomXDir = random.Next(-4, 4);
+                var randomYDir = random.Next(-4, 4);
+                _fuel = new Fuel(new Point(x, y), new Point(randomXDir, randomYDir));
+            }
+            _fuel?.Update();
+
+            if(_fuel != null && _laserBeam != null)
+            {
+                if (_ship.Colission(_fuel) || _laserBeam.Colission(_laserBeam))
+                {
+                    _laserBeam = null;
+                    int heal = random.Next(20, 50);
+                    _ship.HealShip(heal);
+                    _fuel = null;
+                    _ship.ResetCount();
+
+                    //
+                    //ещё одна запись в журнал
+                    _battleJournal.AddNote($"Корабль подобрал топливо и восстановил {heal} энергии.");
+                    _battleJournal.AddNewString();
+                    //
+                    //
+                }
+
+            }
         }
         public static void Load()
         {
@@ -174,31 +244,45 @@ namespace Asteroids
             _planet = new Planet(new Point(100, 100), new Point(0, 0));
 
             _asteroids = new List<SpaceObject>();
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 9; i++)
             {
-                var x = random.Next(0, 801);
-                var y = random.Next(0, 601);
-                var size = random.Next(20, 40);
-                _asteroids.Add(new Asteroid(new Point(x, y), new Point(1, 1), new Size(size, size)));
+                var x = random.Next(100, 700);
+                var y = random.Next(100, 500);
+                var size = random.Next(40, 60);
+                var randomXDir = random.Next(-4, 4);
+                var randomYDir = random.Next(-4, 4);
+                _asteroids.Add(new Asteroid(new Point(x, y), new Point(randomXDir, randomYDir), new Size(size, size)));
             }
 
             _stars = new List<SpaceObject>();
             for (int i = 0; i < 40; i++)
             {
-                var x = random.Next(0, 801);
-                var y = random.Next(0, 601);
+                var x = random.Next(0, 700);
+                var y = random.Next(0, 500);
                 var size = random.Next(5, 21);
                 _stars.Add(new Star(new Point(x, y), new Point(-i, -i), new Size(size, size)));
             }
 
             _ship = new Ship(new Point(10, 400), new Point(5, 5));
+
+            _battleJournal = new BattleJournal();
         }
 
         private static void GameOver(object sender, EventArgs e)
         {
             timer.Stop();
-            Buffer.Graphics.DrawString("The End", new Font(FontFamily.GenericSansSerif, 60, FontStyle.Underline), Brushes.Black, 200, 200);
+            Buffer.Graphics.DrawString("GAME OVER", new Font(FontFamily.GenericSansSerif, 60, FontStyle.Underline), Brushes.Black, 200, 200);
             _buffer.Render();
+            //
+            //ещё одна запись в журнал
+            _battleJournal.AddNote($"Корабль уничтожен. Игра закончена");
+            _battleJournal.AddNewString();
+            //
+            //
+        }
+        private static void BattleJournal_AddString(object sender, BattleJournalEventArgs e)
+        {
+            Debug.WriteLine(DateTime.Now + " " + e.Note);
         }
 
     }

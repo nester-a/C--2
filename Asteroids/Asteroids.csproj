@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
     <Compile Include="Background.cs" />
+    <Compile Include="BattleJournal.cs" />
+    <Compile Include="BattleJournalEventArgs.cs" />
     <Compile Include="Colission.cs" />
     <Compile Include="Fuel.cs" />
     <Compile Include="Game.cs" />

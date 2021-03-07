@@ -12,6 +12,7 @@ namespace Asteroids
     {
         public int Energy { get; private set; } = 100;
         public static event EventHandler DieEvent;
+        public int DestroyAsteroidCount { get; private set; } = 0;
 
         public Ship(Point pos, Point dir):base(pos, dir)
         {
@@ -44,11 +45,22 @@ namespace Asteroids
         //хилим корабль
         public void HealShip (int heal)
         {
-            Energy += heal;
+            if (Energy + heal > 100)
+                Energy = 100;
+            else
+                Energy += heal;
         }
         public void Die()
         {
             DieEvent?.Invoke(this, new EventArgs());
+        }
+        public void IncreaseCount()
+        {
+            DestroyAsteroidCount++;
+        }
+        public void ResetCount()
+        {
+            DestroyAsteroidCount = 0;
         }
     }
 }
