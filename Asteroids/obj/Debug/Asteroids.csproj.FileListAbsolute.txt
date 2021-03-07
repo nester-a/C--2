@@ -25,3 +25,12 @@ C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson3\Asteroids\obj\Debug\As
 C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson3\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
 C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson3\Asteroids\obj\Debug\Asteroids.exe
 C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson3\Asteroids\obj\Debug\Asteroids.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\bin\Debug\Asteroids.exe.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\bin\Debug\Asteroids.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\bin\Debug\Asteroids.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\obj\Debug\Asteroids.csprojAssemblyReference.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\obj\Debug\Asteroids.Properties.Resources.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\obj\Debug\Asteroids.csproj.GenerateResource.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\obj\Debug\Asteroids.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\obj\Debug\Asteroids.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Asteroids\obj\Debug\Asteroids.pdb
