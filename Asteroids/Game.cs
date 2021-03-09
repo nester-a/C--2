@@ -125,8 +125,8 @@ namespace Asteroids
             {
                 var x = random.Next(100, 300);
                 var y = random.Next(100, 300);
-                var randomXDir = random.Next(-4, 4);
-                var randomYDir = random.Next(-4, 4);
+                var randomXDir = random.Next(1, 5);
+                var randomYDir = random.Next(1, 5);
                 _fuel = new Fuel(new Point(x, y), new Point(randomXDir, randomYDir));
             }
             _fuel?.Draw();
@@ -232,8 +232,8 @@ namespace Asteroids
                 var x = random.Next(100, 700);
                 var y = random.Next(100, 500);
                 var size = random.Next(40, 60);
-                var randomXDir = random.Next(-4, 4);
-                var randomYDir = random.Next(-4, 4);
+                var randomXDir = random.Next(1, 5);
+                var randomYDir = random.Next(1, 5);
                 _asteroids.Add(new Asteroid(new Point(x, y), new Point(randomXDir, randomYDir), new Size(size, size)));
             }
 
