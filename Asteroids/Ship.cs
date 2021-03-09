@@ -42,7 +42,6 @@ namespace Asteroids
             Energy -= damage;
         }
 
-        //хилим корабль
         public void HealShip (int heal)
         {
             if (Energy + heal > 100)
