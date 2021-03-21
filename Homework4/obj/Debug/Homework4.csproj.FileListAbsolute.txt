@@ -1,0 +1,7 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4\bin\Debug\Homework4.exe.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4\bin\Debug\Homework4.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4\bin\Debug\Homework4.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4\obj\Debug\Homework4.csprojAssemblyReference.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4\obj\Debug\Homework4.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4\obj\Debug\Homework4.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4\obj\Debug\Homework4.pdb

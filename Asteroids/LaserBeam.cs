@@ -10,6 +10,7 @@ namespace Asteroids
 {
     class LaserBeam : SpaceObject
     {
+        public bool isOutOfRange { get; private set; } = false;
         public LaserBeam(Point pos, Point dir, Size size) : base (pos, dir, size)
         {
 
@@ -22,6 +23,7 @@ namespace Asteroids
         public override void Update()
         {
             Pos.X += 100;
+            if (Pos.X >= Game.Width + 300) isOutOfRange = true;
         }
     }
 }

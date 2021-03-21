@@ -19,13 +19,14 @@ namespace Asteroids
         private static List<SpaceObject> _stars;
         private static Planet _planet;
         private static Background _background;
-        private static LaserBeam _laserBeam;
+        private static List<LaserBeam>  _laserBeams;
         private static Random random;
         private static Ship _ship;
         private static Timer timer = new Timer();
         private static Fuel _fuel;
         private static BattleJournal _battleJournal;
         private static AddNoteToFIle addNoteToFile;
+        private static int asteroidsCount = 9;
 
         public static int Width { get; set; }
         public static int Height { get; set; }
@@ -82,7 +83,7 @@ namespace Asteroids
         {
             if(e.KeyCode == Keys.ControlKey)
             {
-                _laserBeam = new LaserBeam(new Point(_ship.Rect.X + 128, _ship.Rect.Y + 30), new Point(0, 0), new Size(10, 40));
+                _laserBeams.Add(new LaserBeam(new Point(_ship.Rect.X + 128, _ship.Rect.Y + 30), new Point(0, 0), new Size(10, 40)));
             }
             if(e.KeyCode == Keys.Up)
             {
@@ -109,10 +110,13 @@ namespace Asteroids
 
             _planet.Draw();
 
-            foreach (var asteroid in _asteroids)
-                asteroid?.Draw();
+            foreach (var _asteroid in _asteroids)
+                _asteroid.Draw();
 
-            _laserBeam?.Draw();
+            foreach (var _laserBeam in _laserBeams)
+            {
+                _laserBeam.Draw();
+            }
 
             if(_ship != null)
             {
@@ -135,87 +139,107 @@ namespace Asteroids
         }
         public static void Update()
         {
-            for (int i = 0; i < _asteroids.Count; i++)
+            CollisionWithAsteroidHelpMethod();
+            foreach (var _asteroid in _asteroids)
             {
-                for (int j = 0; j < _asteroids.Count; j++)
+                _asteroid.Update();
+            }
+            CollisionWithLaserHelpMethod();
+            foreach (var _asteroid in _asteroids)
+            {
+                _asteroid.Update();
+            }
+            CollisionWithShipHelpMethod();
+            foreach (var _asteroid in _asteroids)
+            {
+                _asteroid.Update();
+            }
+            #region Старый код
+            //for (int i = 0; i < _asteroids.Count; i++)
+            //{
+            //    ////столкновение с другим астероидом
+            //    //for (int j = 0; j < _asteroids.Count; j++) 
+            //    //{
+            //    //    if (i == j) continue;
+            //    //    if (_asteroids[i].Colission(_asteroids[j]))
+            //    //    {
+            //    //        _asteroids[i].ChangeDirection();
+            //    //        _asteroids[j].ChangeDirection();
+            //    //        _asteroids[i].Update();
+            //    //        _asteroids[j].Update();
+            //    //    }
+            //    //}
+            //    //for (int j = 0; j < _laserBeams.Count; j++)
+            //    //{
+            //    //    if (_laserBeams[j] != null && _asteroids[i].Colission(_laserBeams[j]))
+            //    //    {
+            //    //        _battleJournal.AddNote($"Лазер попал в астероид по координатам X={_asteroids[i].Rect.X}, Y={_asteroids[i].Rect.Y}");
+            //    //        _battleJournal.AddNewString();
+
+            //    //        _asteroids.RemoveAt(i--);
+            //    //        _laserBeams.RemoveAt(j--);
+            //    //        _ship.IncreaseCount();
+
+            //    //        _battleJournal.AddNote($"Корабль уничтожил астероид. Счёт - {_ship.DestroyAsteroidCount}");
+            //    //        _battleJournal.AddNewString();
+            //    //    }
+            //    //}
+            //    //столкновение с кораблём
+            //    if (_asteroids[i].Colission(_ship))
+            //    {
+            //        _battleJournal.AddNote($"Астероид столкнулся с кораблём по координатам X={_asteroids[i].Rect.X}, Y={_asteroids[i].Rect.Y}");
+            //        _battleJournal.AddNewString();
+
+            //        _asteroids.Remove(_asteroids[i]);
+            //        int damage = random.Next(10, 33);
+            //        _ship.DamageShip(damage);
+            //        _ship.IncreaseCount();
+
+            //        _battleJournal.AddNote($"Корабль получил урон равный {damage}");
+            //        _battleJournal.AddNewString();
+            //        _battleJournal.AddNote($"Корабль уничтожил астероид своим корпусом. Счёт - {_ship.DestroyAsteroidCount}");
+            //        _battleJournal.AddNewString();
+
+            //        if (_ship.Energy <= 0)
+            //        {
+            //            _ship.Die();
+            //        }
+            //    }
+            //}
+            #endregion
+            for (int i = 0; i < _laserBeams.Count; i++)
+            {
+                if (_fuel != null && _laserBeams[i] != null)
                 {
-                    if (i == j) continue;
-                    if (_asteroids[i].Colission(_asteroids[j]))
+                    if (_ship.Colission(_fuel) || _laserBeams[i].Colission(_fuel))
                     {
-                        _asteroids[i].ChangeDirection();
-                        _asteroids[j].ChangeDirection();
-                        _asteroids[i].Update();
-                        _asteroids[j].Update();
+                        _laserBeams.RemoveAt(i);
+                        int heal = random.Next(20, 50);
+                        _ship.HealShip(heal);
+                        _fuel = null;
+
+                        _battleJournal.AddNote($"Корабль подобрал топливо и восстановил {heal} энергии.");
+                        _battleJournal.AddNewString();
                     }
-                    _asteroids[i].Update();
                 }
             }
-
-            foreach (var asteroid in _asteroids)
+            for (int i = 0; i < _laserBeams.Count; i++)
             {
-                asteroid.Update();
+                _laserBeams[i].Update();
+                if (_laserBeams[i].isOutOfRange == true)
+                    _laserBeams.RemoveAt(i);
             }
-
-            foreach (var asteroid in _asteroids)
-            {
-                if (_laserBeam != null && asteroid.Colission(_laserBeam))
-                {
-                    _battleJournal.AddNote($"Лазер попал в астероид по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
-                    _battleJournal.AddNewString();
-                    
-                    _asteroids.Remove(asteroid);
-                    _laserBeam = null;
-                    _ship.IncreaseCount();
-
-                    _battleJournal.AddNote($"Корабль уничтожил астероид. Счёт - {_ship.DestroyAsteroidCount}");
-                    _battleJournal.AddNewString();
-
-                    break;
-                }
-                if (asteroid.Colission(_ship))
-                {
-                    _battleJournal.AddNote($"Астероид столкнулся с кораблём по координатам X={asteroid.Rect.X}, Y={asteroid.Rect.Y}");
-                    _battleJournal.AddNewString();
-
-                    _asteroids.Remove(asteroid);
-                    int damage = random.Next(10, 33);
-                    _ship.DamageShip(damage);
-                    _ship.IncreaseCount();
-
-                    _battleJournal.AddNote($"Корабль получил урон равный {damage}");
-                    _battleJournal.AddNewString();
-                    _battleJournal.AddNote($"Корабль уничтожил астероид своим корпусом. Счёт - {_ship.DestroyAsteroidCount}");
-                    _battleJournal.AddNewString();
-
-                    if (_ship.Energy <= 0)
-                    {
-                        _ship.Die();
-                    }
-                    break;
-                }
-            }
-
             foreach (var star in _stars)
                 star.Update();
-            
-            _laserBeam?.Update();
 
             _planet.Update();
             
             _fuel?.Update();
 
-            if(_fuel != null && _laserBeam != null)
+            if(_asteroids.Count == 0)
             {
-                if (_ship.Colission(_fuel) || _laserBeam.Colission(_fuel))
-                {
-                    _laserBeam = null;
-                    int heal = random.Next(20, 50);
-                    _ship.HealShip(heal);
-                    _fuel = null;
-
-                    _battleJournal.AddNote($"Корабль подобрал топливо и восстановил {heal} энергии.");
-                    _battleJournal.AddNewString();
-                }
+                asteroidsCount++;
+                CreatAsteroidsHelpMethod();
             }
         }
         public static void Load()
@@ -227,15 +251,7 @@ namespace Asteroids
             _planet = new Planet(new Point(100, 100), new Point(0, 0));
 
             _asteroids = new List<SpaceObject>();
-            for (int i = 0; i < 9; i++)
-            {
-                var x = random.Next(100, 700);
-                var y = random.Next(100, 500);
-                var size = random.Next(40, 60);
-                var randomXDir = random.Next(1, 5);
-                var randomYDir = random.Next(1, 5);
-                _asteroids.Add(new Asteroid(new Point(x, y), new Point(randomXDir, randomYDir), new Size(size, size)));
-            }
+            CreatAsteroidsHelpMethod();
 
             _stars = new List<SpaceObject>();
             for (int i = 0; i < 40; i++)
@@ -249,6 +265,8 @@ namespace Asteroids
             _ship = new Ship(new Point(10, 400), new Point(5, 5));
 
             _battleJournal = new BattleJournal();
+
+            _laserBeams = new List<LaserBeam>();
 
             addNoteToFile = _battleJournal.AddNoteInFile;
         }
@@ -267,6 +285,82 @@ namespace Asteroids
         {
             Debug.WriteLine(DateTime.Now + " " + e.Note);
             addNoteToFile?.Invoke();
+        }
+        private static void CollisionWithAsteroidHelpMethod()
+        {
+            for (int i = 0; i < _asteroids.Count; i++)
+            {
+                for (int j = 0; j < _asteroids.Count; j++)
+                {
+                    if (i == j) continue;
+                    if (_asteroids[i].Colission(_asteroids[j]))
+                    {
+                        _asteroids[i].ChangeDirection();
+                        _asteroids[j].ChangeDirection();
+                        _asteroids[i].Update();
+                        _asteroids[j].Update();
+                    }
+                }
+            }
+        }
+        private static void CollisionWithLaserHelpMethod()
+        {
+            for (int i = 0; i < _asteroids.Count; i++)
+            {
+                for (int j = 0; j < _laserBeams.Count; j++)
+                {
+                    if (_laserBeams[j] != null && _asteroids[i].Colission(_laserBeams[j]))
+                    {
+                        _battleJournal.AddNote($"Лазер попал в астероид по координатам X={_asteroids[i].Rect.X}, Y={_asteroids[i].Rect.Y}");
+                        _battleJournal.AddNewString();
+
+                        _asteroids.RemoveAt(i);
+                        _laserBeams.RemoveAt(j);
+                        _ship.IncreaseCount();
+
+                        _battleJournal.AddNote($"Корабль уничтожил астероид. Счёт - {_ship.DestroyAsteroidCount}");
+                        _battleJournal.AddNewString();
+                    }
+                }
+            }
+        }
+        private static void CollisionWithShipHelpMethod()
+        {
+            for (int i = 0; i < _asteroids.Count; i++)
+            {
+                if (_asteroids[i].Colission(_ship))
+                {
+                    _battleJournal.AddNote($"Астероид столкнулся с кораблём по координатам X={_asteroids[i].Rect.X}, Y={_asteroids[i].Rect.Y}");
+                    _battleJournal.AddNewString();
+
+                    _asteroids.Remove(_asteroids[i]);
+                    int damage = random.Next(10, 33);
+                    _ship.DamageShip(damage);
+                    _ship.IncreaseCount();
+
+                    _battleJournal.AddNote($"Корабль получил урон равный {damage}");
+                    _battleJournal.AddNewString();
+                    _battleJournal.AddNote($"Корабль уничтожил астероид своим корпусом. Счёт - {_ship.DestroyAsteroidCount}");
+                    _battleJournal.AddNewString();
+
+                    if (_ship.Energy <= 0)
+                    {
+                        _ship.Die();
+                    }
+                }
+            }
+        }
+        private static void CreatAsteroidsHelpMethod()
+        {
+            for (int i = 0; i < asteroidsCount; i++)
+            {
+                var x = random.Next(100, 700);
+                var y = random.Next(100, 500);
+                var size = random.Next(40, 60);
+                var randomXDir = random.Next(1, 5);
+                var randomYDir = random.Next(1, 5);
+                _asteroids.Add(new Asteroid(new Point(x, y), new Point(randomXDir, randomYDir), new Size(size, size)));
+            }
         }
     }
 }
