@@ -11,28 +11,21 @@ namespace Homework4
     {
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>() { 1, -2, 3, -4, 3, -8, -8, -8 };
-            //Count(numbers);
-            //Console.WriteLine("***");
+            List<int> numbers = new List<int>() { 1, -2, 3, -4, 3, -8, -8, 8 };
+            Count(numbers);
+            Console.WriteLine("***");
 
-            //ArrayList list = new ArrayList();
-            //list.Add("привет");
-            //list.Add(1);
-            //list.Add('q');
-            //list.Add(1);
-            //list.Add("привет");
-            //Count(list);
-            //Console.WriteLine("***");
+            ArrayList list = new ArrayList();
+            list.Add("привет");
+            list.Add(1);
+            list.Add('q');
+            list.Add(1);
+            list.Add("привет");
+            Count(list);
+            Console.WriteLine("***");
 
-            var tmp = from n
-                      in numbers
-                      where n.Equals(numbers[1])
-                      select n;
-
-            foreach (var item in tmp)
-            {
-                Console.WriteLine(item);
-            }
+            CountWithLinq<int>(numbers);
+            Console.ReadKey();
         }
         private static void Count(List<int> list)
         {
@@ -79,7 +72,14 @@ namespace Homework4
             {
                 var tmp = from n
                           in list
-                          whe
+                          where n.Equals(list[i])
+                          select n;
+                counter[i] = tmp.Count();
+            }
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine($"Элемент {list[i]} встречается в коллекции {counter[i]} раз");
             }
         }
     }

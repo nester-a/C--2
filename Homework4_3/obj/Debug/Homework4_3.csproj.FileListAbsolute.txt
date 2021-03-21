@@ -1,0 +1,6 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4_3\bin\Debug\Homework4_3.exe.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4_3\bin\Debug\Homework4_3.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4_3\bin\Debug\Homework4_3.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4_3\obj\Debug\Homework4_3.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4_3\obj\Debug\Homework4_3.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Homework4_3\obj\Debug\Homework4_3.pdb
