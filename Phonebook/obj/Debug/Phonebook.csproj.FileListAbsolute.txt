@@ -16,3 +16,5 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook\obj\Debug\Phonebo
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook\obj\Debug\Phonebook.csproj.CopyComplete
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook\obj\Debug\Phonebook.exe
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook\obj\Debug\Phonebook.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook\bin\Debug\Phonebook.Controls.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook\bin\Debug\Phonebook.Controls.pdb

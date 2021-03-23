@@ -96,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Phonebook.Controls\Phonebook.Controls.csproj">
+      <Project>{5391cbba-566b-4b67-b96f-100058706177}</Project>
+      <Name>Phonebook.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Phonebook.Data\Phonebook.Data.csproj">
       <Project>{0f69c29b-cfaa-4fbc-aae5-47e7eef5a437}</Project>
       <Name>Phonebook.Data</Name>
