@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Company.Controls.EmployeeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Company.Controls"
+             mc:Ignorable="d" Height="350" Width="390">
+    <Grid>
+        <Label x:Name="lName" Content="Name:" HorizontalAlignment="Left" Margin="31,27,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lSurname" Content="Surname:" HorizontalAlignment="Left" Margin="31,75,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lDepartment" Content="Department" HorizontalAlignment="Left" Margin="31,126,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lComment" Content="Comment" HorizontalAlignment="Left" Margin="31,183,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbName" HorizontalAlignment="Left" Height="23" Margin="130,27,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"/>
+        <TextBox x:Name="txtbSurname" HorizontalAlignment="Left" Height="23" Margin="130,79,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"/>
+        <TextBox x:Name="txtbComment" HorizontalAlignment="Left" Height="142" Margin="130,183,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"/>
+        <ComboBox x:Name="chbDepartment" HorizontalAlignment="Left" Margin="130,129,0,0" VerticalAlignment="Top" Width="235"/>
+
+    </Grid>
+</UserControl>
