@@ -13,3 +13,4 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\SApp_01\obj\Debug\SApp_01.c
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\SApp_01\obj\Debug\SApp_01.csproj.CoreCompileInputs.cache
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\SApp_01\obj\Debug\SApp_01.exe
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\SApp_01\obj\Debug\SApp_01.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\SApp_01\obj\Debug\Dictionary1.baml

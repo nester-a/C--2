@@ -3,12 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SApp_01"
+        xmlns:local="clr-namespace:SApp_01" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Height="160" 
+        Width="300"
+        Title="Ресурсы">
     <Grid>
-        <TextBlock Text="Hello, WPF" HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" FontSize="36" 
-                   Margin="44,42,577.6,330"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" SelectionChanged="comboBox_SelectionChanged">
+            <ComboBoxItem>Элемент #1</ComboBoxItem>
+            <ComboBoxItem>Элемент #2</ComboBoxItem>
+            <ComboBoxItem>Элемент #3</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>

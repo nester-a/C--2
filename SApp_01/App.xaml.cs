@@ -17,6 +17,8 @@ namespace SApp_01
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Title = "Hello, WPF!";
+            if (e.Args.Length == 1)
+                MessageBox.Show("Параметр: \n\n" + e.Args[0]);
             mainWindow.Show();
         }
     }
