@@ -8,12 +8,12 @@
     <Grid>
         <Label x:Name="lName" Content="Name:" HorizontalAlignment="Left" Margin="31,27,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lSurname" Content="Surname:" HorizontalAlignment="Left" Margin="31,75,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lDepartment" Content="Department" HorizontalAlignment="Left" Margin="31,126,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lComment" Content="Comment" HorizontalAlignment="Left" Margin="31,183,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtbName" HorizontalAlignment="Left" Height="23" Margin="130,27,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"/>
-        <TextBox x:Name="txtbSurname" HorizontalAlignment="Left" Height="23" Margin="130,79,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"/>
-        <TextBox x:Name="txtbComment" HorizontalAlignment="Left" Height="142" Margin="130,183,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="235"/>
-        <ComboBox x:Name="chbDepartment" HorizontalAlignment="Left" Margin="130,129,0,0" VerticalAlignment="Top" Width="235"/>
+        <Label x:Name="lDepartment" Content="Department:" HorizontalAlignment="Left" Margin="31,126,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lComment" Content="Comment:" HorizontalAlignment="Left" Margin="31,183,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbName" Height="23" Margin="130,27,25.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbSurname" Height="23" Margin="130,79,25.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbComment" Height="134" Margin="130,191,25.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <ComboBox x:Name="chbDepartment" Margin="130,129,25.4,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

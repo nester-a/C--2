@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Company.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,16 +21,67 @@ namespace Company
     /// </summary>
     public partial class MainWindow : Window
     {
-        CompanyDatabase company = new CompanyDatabase(); 
+        internal CompanyDatabase company = new CompanyDatabase();
+        AddEmployeeChildWindow childWindow;
         public MainWindow()
         {
             InitializeComponent();
             Update();
+            btnDelete.Click += btnDelete_Click;
         }
+
         private void Update()
         {
             companyListView.ItemsSource = null;
             companyListView.ItemsSource = company.list;
+        }
+        private void companyListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count != 0)
+            {
+                employeeControl.SetEmployee(e.AddedItems[0] as Employee);
+            }
+        }
+        private void btnApply_Click(object sender, RoutedEventArgs e)
+        {
+            if (companyListView.SelectedItems.Count < 1)
+            {
+                return;
+            }
+            employeeControl.UpdateEmployee();
+            Update();
+        }
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (companyListView.SelectedItems.Count < 1)
+            {
+                return;
+            }
+            if (MessageBox.Show("Вы действительно желаете удалить данные сотрудника?", "Удаление данных сотрудника", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                company.list.Remove((Employee)companyListView.SelectedItems[0]);
+                employeeControl.SetEmployee(null);
+                Update();
+            }
+        }
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            childWindow = new AddEmployeeChildWindow();
+            childWindow.Show();
+            childWindow.Owner = this;
+
+            //
+            // вот оно, то про что я говорил - событие подписывается на событие
+            //
+            childWindow.btnConfirm.Click += ChildWindow_btnConfirm_Click;
+        }
+        private void ChildWindow_btnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (childWindow.isCorrect == true)
+            {
+                company.AddEmployee(childWindow.newEmployee);
+                Update();
+            }
         }
     }
 }

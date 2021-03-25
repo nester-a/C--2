@@ -16,3 +16,7 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\Company.c
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\Company.csproj.CopyComplete
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\Company.exe
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\Company.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\bin\Debug\Company.Controls.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\bin\Debug\Company.Controls.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\AddEmployeeChildWindow.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\AddEmployeeChildWindow.baml

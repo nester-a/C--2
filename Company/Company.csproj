@@ -55,10 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddEmployeeChildWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddEmployeeChildWindow.xaml.cs">
+      <DependentUpon>AddEmployeeChildWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,6 +103,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Company.Controls\Company.Controls.csproj">
+      <Project>{fa539be7-4b0b-4785-a95e-b5392c145ccd}</Project>
+      <Name>Company.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Company.Data\Company.Data.csproj">
       <Project>{24ece56e-ed14-40b9-834f-3d9c7a84c963}</Project>
       <Name>Company.Data</Name>
