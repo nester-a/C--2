@@ -1,0 +1,16 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\bin\Debug\WindowRelation.exe.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\bin\Debug\WindowRelation.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\bin\Debug\WindowRelation.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\ChildWindow.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\MainWindow.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\App.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation_MarkupCompile.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation_MarkupCompile.lref
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\ChildWindow.baml
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\MainWindow.baml
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation.g.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation.Properties.Resources.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation.csproj.GenerateResource.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WindowRelation\obj\Debug\WindowRelation.pdb
