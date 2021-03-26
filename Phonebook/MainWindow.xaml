@@ -3,10 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:Phonebook.Converters"    
         xmlns:local="clr-namespace:Phonebook"
         xmlns:Controls="clr-namespace:Phonebook.Controls;assembly=Phonebook.Controls" x:Class="Phonebook.MainWindow"
         mc:Ignorable="d"
         Title="Телефонный справочник" Height="450" Width="800">
+    <Window.Resources>
+        <converters:LockedConverter x:Key="lockedConverter"/>
+        <!-- Использование стиля, как статического ресурса окна-->
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#FF129834"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <ListView  x:Name ="phonebookListView" SelectionMode="Single" 
                    Margin="10,10,303,10" SelectionChanged="phonebookListView_SelectionChanged">
@@ -16,6 +25,8 @@
                                     DisplayMemberBinding="{Binding Phone}"/>
                     <GridViewColumn Width="Auto" Header="ФИО"
                                     DisplayMemberBinding="{Binding FIO}"/>
+                    <GridViewColumn Width="Auto" Header="Блокировка"
+                                    DisplayMemberBinding="{Binding Locked, Converter={StaticResource lockedConverter}}"/>
                 </GridView>
             </ListView.View>
         </ListView>
