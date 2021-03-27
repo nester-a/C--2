@@ -17,14 +17,22 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <ListView  x:Name ="phonebookListView" SelectionMode="Single" 
-                   Margin="10,10,303,10" SelectionChanged="phonebookListView_SelectionChanged">
+        <ListView  x:Name ="phonebookListView" 
+                   ItemsSource="{Binding ContactList}"
+                   SelectedItem="{Binding SelectedContact}"
+                   SelectionMode="Single" 
+                   Margin="10,10,303,10" 
+                   SelectionChanged="phonebookListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="100" Header="Номер телефона"
                                     DisplayMemberBinding="{Binding Phone}"/>
-                    <GridViewColumn Width="Auto" Header="ФИО"
-                                    DisplayMemberBinding="{Binding FIO}"/>
+                    <GridViewColumn Width="Auto" Header="Фамилия"
+                                    DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Width="Auto" Header="Имя"
+                                    DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Width="Auto" Header="Отчество"
+                                    DisplayMemberBinding="{Binding SecondName}"/>
                     <GridViewColumn Width="Auto" Header="Блокировка"
                                     DisplayMemberBinding="{Binding Locked, Converter={StaticResource lockedConverter}}"/>
                 </GridView>

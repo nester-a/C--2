@@ -1,6 +1,7 @@
 ﻿using Phonebook.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,11 @@ namespace Phonebook
         private static int CHAR_BOUND_L = 65;
         private static int CHAR_BOUND_H = 90;
         private static Random random = new Random();
-        public List<Contact> Contacts { get; set; }
+        public ObservableCollection<Contact> Contacts { get; set; }
         
         public PhoneDatabase()
         {
-            Contacts = new List<Contact>();
+            Contacts = new ObservableCollection<Contact>();
             GenerateContacts(35);
         }
         private string GenerateSymbols(int amount)

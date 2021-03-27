@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace Phonebook
 {
@@ -23,18 +24,25 @@ namespace Phonebook
     public partial class MainWindow : Window
     {
         private PhoneDatabase dataBase = new PhoneDatabase();
+
+        public ObservableCollection<Contact> ContactList { get; set; }
+        public Contact SelectedContact { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
 
-            UpdateBindings();
+            this.DataContext = this;
+
+            ContactList = dataBase.Contacts;
         }
 
         private void phonebookListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count != 0)
             {
-                contactControl.SetContact(e.AddedItems[0] as Contact);
+                contactControl.Contact = (Contact)SelectedContact.Clone();
+                //contactControl.SetContact(e.AddedItems[0] as Contact);
             }
         }
 
@@ -44,14 +52,15 @@ namespace Phonebook
             {
                 return;
             }
-            contactControl.UpdateContact();
-            UpdateBindings();
+            ContactList[ContactList.IndexOf(SelectedContact)] = contactControl.Contact;
+            //contactControl.UpdateContact();
+            //UpdateBindings();
         }
-        private void UpdateBindings()
-        {
-            phonebookListView.ItemsSource = null;
-            phonebookListView.ItemsSource = dataBase.Contacts;
-        }
+        //private void UpdateBindings()
+        //{
+        //    //phonebookListView.ItemsSource = null;
+        //    //phonebookListView.ItemsSource = dataBase.Contacts;
+        //}
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -62,7 +71,7 @@ namespace Phonebook
             if(MessageBox.Show("Вы действительно желаете удалить контакт?", "Удаление контакта",MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 dataBase.Contacts.Remove((Contact)phonebookListView.SelectedItems[0]);
-                UpdateBindings();
+                //UpdateBindings();
             }
         }
     }
