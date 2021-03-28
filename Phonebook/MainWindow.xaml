@@ -1,0 +1,48 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:Phonebook.Converters"    
+        xmlns:local="clr-namespace:Phonebook"
+        xmlns:Controls="clr-namespace:Phonebook.Controls;assembly=Phonebook.Controls" x:Class="Phonebook.MainWindow"
+        mc:Ignorable="d"
+        Title="Телефонный справочник" Height="450" Width="800">
+    <Window.Resources>
+        <converters:LockedConverter x:Key="lockedConverter"/>
+        <!-- Использование стиля, как статического ресурса окна-->
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#FF129834"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <ListView  x:Name ="phonebookListView" 
+                   ItemsSource="{Binding ContactList}"
+                   SelectedItem="{Binding SelectedContact}"
+                   SelectionMode="Single" 
+                   Margin="10,10,303,10" 
+                   SelectionChanged="phonebookListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" Header="Номер телефона"
+                                    DisplayMemberBinding="{Binding Phone}"/>
+                    <GridViewColumn Width="Auto" Header="Фамилия"
+                                    DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Width="Auto" Header="Имя"
+                                    DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Width="Auto" Header="Отчество"
+                                    DisplayMemberBinding="{Binding SecondName}"/>
+                    <GridViewColumn Width="Auto" Header="Блокировка"
+                                    DisplayMemberBinding="{Binding Locked, Converter={StaticResource lockedConverter}}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Controls:ContactControl x:Name="contactControl"
+                                 HorizontalAlignment="Left" Height="319" Margin="496,10,0,0" VerticalAlignment="Top" Width="288"/>
+        <Button x:Name ="btnApply" Content="Применить" HorizontalAlignment="Left" Height="22" Margin="680,334,0,0" VerticalAlignment="Top" Width="92" Click="btnApply_Click"/>
+        <Button x:Name ="btnDelete" Content="Удалить" HorizontalAlignment="Left" Height="22" Margin="509,334,0,0" VerticalAlignment="Top" Width="92" Click="btnDelete_Click" />
+
+    </Grid>
+</Window>

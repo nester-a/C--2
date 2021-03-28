@@ -1,0 +1,14 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\bin\Debug\WPFApp7.exe.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\bin\Debug\WPFApp7.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\bin\Debug\WPFApp7.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\MainWindow.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\App.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7_MarkupCompile.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7_MarkupCompile.lref
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\MainWindow.baml
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7.g.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7.Properties.Resources.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7.csproj.GenerateResource.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp7\obj\Debug\WPFApp7.pdb

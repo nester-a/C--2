@@ -1,0 +1,14 @@
+﻿<Application x:Class="SApp_01.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SApp_01" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Startup="Application_Startup">
+    <!-- StartupUri="MainWindow.xaml"-->
+    <Application.Resources>
+        <!--<Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="30" />
+        </Style>-->
+    </Application.Resources>
+</Application>
