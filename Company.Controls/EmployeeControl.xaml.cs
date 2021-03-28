@@ -1,6 +1,7 @@
 ﻿using Company.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -24,9 +25,6 @@ namespace Company.Controls
     public partial class EmployeeControl : UserControl, INotifyPropertyChanged
     {
         private Employee _employee;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public Employee Employee
         {
             get => _employee;
@@ -36,53 +34,34 @@ namespace Company.Controls
                 NotifyPropertyChanged();
             }
         }
+        public ObservableCollection<Department> DepartmentList { get; set; } = new ObservableCollection<Department>();
+                
+        public EmployeeControl()
+        {
+            InitializeComponent();
+
+            //инициализурую Работника, поскольку без него при добавлении нового работника в переменную нового работника присваивается null
+            Employee = new Employee();
+
+            this.DataContext = this;
+
+            DepartmentList.Add(Department.Purchasing);
+            DepartmentList.Add(Department.Sales);
+            DepartmentList.Add(Department.Service);
+
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
         public bool isNotEmpty
         {
             get
             {
-                if(txtbName.Text == null || txtbSurname.Text == null ||chbDepartment.SelectedValue == default)
+                if (txtbName.Text == null || txtbSurname.Text == null || chbDepartment.SelectedValue == default)
                 {
                     return false;
                 }
                 return true;
             }
         }
-        public EmployeeControl()
-        {
-            InitializeComponent();
-            chbDepartment.ItemsSource = Enum.GetValues(typeof(Department)).Cast<Department>();
-        }
-        //public void SetEmployee(Employee employee)
-        //{
-        //    if(employee == null)
-        //    {
-        //        txtbName.Text = null;
-        //        txtbSurname.Text = null;
-        //        txtbComment.Text = null;
-        //        chbDepartment.SelectedItem = null;
-        //    }
-        //    else
-        //    {
-        //        this.Employee = employee;
-        //        txtbName.Text = employee.Name;
-        //        txtbSurname.Text = employee.Surname;
-        //        txtbComment.Text = employee.Comment;
-        //        chbDepartment.SelectedItem = employee.Department;
-        //    }
-        //}
-        //public Employee UpdateEmployee()
-        //{
-        //    if(Employee == null)
-        //    {
-        //        Employee = new Employee();
-        //    }
-        //    Employee.Name = txtbName.Text;
-        //    Employee.Surname = txtbSurname.Text;
-        //    Employee.Department = (Department)chbDepartment.SelectedItem;
-        //    Employee.Comment = txtbComment.Text;
-
-        //    return Employee;
-        //}
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             if (PropertyChanged != null)
