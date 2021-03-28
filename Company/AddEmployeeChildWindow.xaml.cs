@@ -42,8 +42,8 @@ namespace Company
                 return;
             }
             isCorrect = true;
-
-            newEmployee = employeeControl.UpdateEmployee();
+            newEmployee = employeeControl.Employee;
+            //newEmployee = employeeControl.UpdateEmployee();
             Close();
         }
     }

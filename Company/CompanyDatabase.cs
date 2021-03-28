@@ -1,6 +1,7 @@
 ﻿using Company.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +10,14 @@ namespace Company
 {
     class CompanyDatabase
     {
-        public List<Employee> list { get; private set; }
+        public ObservableCollection<Employee> list { get; private set; }
         private static Random random = new Random();
         private const int CHAR_BOUND_L = 65;
         private const int CHAR_BOUND_H = 90;
 
         public CompanyDatabase()
         {
-            list = new List<Employee>();
+            list = new ObservableCollection<Employee>();
             AddEmployees(50);
         }
         public void AddEmployee(Employee employee)

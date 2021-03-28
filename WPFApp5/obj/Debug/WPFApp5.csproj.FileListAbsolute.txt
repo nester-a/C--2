@@ -12,4 +12,3 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp5\obj\Debug\WPFApp5.c
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp5\obj\Debug\WPFApp5.csproj.CoreCompileInputs.cache
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp5\obj\Debug\WPFApp5.exe
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp5\obj\Debug\WPFApp5.pdb
-C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp5\obj\Debug\WPFApp5.csprojAssemblyReference.cache

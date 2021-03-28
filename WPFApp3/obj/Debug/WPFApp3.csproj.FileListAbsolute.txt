@@ -1,7 +1,6 @@
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp3\bin\Debug\WPFApp3.exe.config
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp3\bin\Debug\WPFApp3.exe
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp3\bin\Debug\WPFApp3.pdb
-C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp3\obj\Debug\WPFApp3.csprojAssemblyReference.cache
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp3\obj\Debug\MainWindow.g.cs
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp3\obj\Debug\App.g.cs
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp3\obj\Debug\GeneratedInternalTypeHelper.g.cs

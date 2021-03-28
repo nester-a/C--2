@@ -1,6 +1,7 @@
 ﻿using Company.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,10 +24,16 @@ namespace Company
     {
         internal CompanyDatabase company = new CompanyDatabase();
         AddEmployeeChildWindow childWindow;
+        public ObservableCollection<Employee> EmployeeList { get; set; }
+        public Employee SelectedEmployee { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
-            Update();
+            this.DataContext = this;
+
+            EmployeeList = company.list;
+            //Update();
             btnDelete.Click += btnDelete_Click;
         }
 
@@ -39,7 +46,8 @@ namespace Company
         {
             if (e.AddedItems.Count != 0)
             {
-                employeeControl.SetEmployee(e.AddedItems[0] as Employee);
+                employeeControl.Employee = (Employee)SelectedEmployee.Clone();
+                //employeeControl.SetEmployee(e.AddedItems[0] as Employee);
             }
         }
         private void btnApply_Click(object sender, RoutedEventArgs e)
@@ -48,7 +56,8 @@ namespace Company
             {
                 return;
             }
-            employeeControl.UpdateEmployee();
+            EmployeeList[EmployeeList.IndexOf(SelectedEmployee)] = employeeControl.Employee;
+            //employeeControl.UpdateEmployee();
             Update();
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -60,7 +69,7 @@ namespace Company
             if (MessageBox.Show("Вы действительно желаете удалить данные сотрудника?", "Удаление данных сотрудника", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 company.list.Remove((Employee)companyListView.SelectedItems[0]);
-                employeeControl.SetEmployee(null);
+                //employeeControl.SetEmployee(null);
                 Update();
             }
         }

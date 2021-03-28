@@ -1,7 +1,9 @@
 ﻿using Company.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,9 +21,21 @@ namespace Company.Controls
     /// <summary>
     /// Interaction logic for EmployeeControl.xaml
     /// </summary>
-    public partial class EmployeeControl : UserControl
+    public partial class EmployeeControl : UserControl, INotifyPropertyChanged
     {
-        private Employee employee;
+        private Employee _employee;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public Employee Employee
+        {
+            get => _employee;
+            set
+            {
+                _employee = value;
+                NotifyPropertyChanged();
+            }
+        }
         public bool isNotEmpty
         {
             get
@@ -38,36 +52,43 @@ namespace Company.Controls
             InitializeComponent();
             chbDepartment.ItemsSource = Enum.GetValues(typeof(Department)).Cast<Department>();
         }
-        public void SetEmployee(Employee employee)
-        {
-            if(employee == null)
-            {
-                txtbName.Text = null;
-                txtbSurname.Text = null;
-                txtbComment.Text = null;
-                chbDepartment.SelectedItem = null;
-            }
-            else
-            {
-                this.employee = employee;
-                txtbName.Text = employee.Name;
-                txtbSurname.Text = employee.Surname;
-                txtbComment.Text = employee.Comment;
-                chbDepartment.SelectedItem = employee.Department;
-            }
-        }
-        public Employee UpdateEmployee()
-        {
-            if(employee == null)
-            {
-                employee = new Employee();
-            }
-            employee.Name = txtbName.Text;
-            employee.Surname = txtbSurname.Text;
-            employee.Department = (Department)chbDepartment.SelectedItem;
-            employee.Comment = txtbComment.Text;
+        //public void SetEmployee(Employee employee)
+        //{
+        //    if(employee == null)
+        //    {
+        //        txtbName.Text = null;
+        //        txtbSurname.Text = null;
+        //        txtbComment.Text = null;
+        //        chbDepartment.SelectedItem = null;
+        //    }
+        //    else
+        //    {
+        //        this.Employee = employee;
+        //        txtbName.Text = employee.Name;
+        //        txtbSurname.Text = employee.Surname;
+        //        txtbComment.Text = employee.Comment;
+        //        chbDepartment.SelectedItem = employee.Department;
+        //    }
+        //}
+        //public Employee UpdateEmployee()
+        //{
+        //    if(Employee == null)
+        //    {
+        //        Employee = new Employee();
+        //    }
+        //    Employee.Name = txtbName.Text;
+        //    Employee.Surname = txtbSurname.Text;
+        //    Employee.Department = (Department)chbDepartment.SelectedItem;
+        //    Employee.Comment = txtbComment.Text;
 
-            return employee;
+        //    return Employee;
+        //}
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

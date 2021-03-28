@@ -4,18 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Company"
+        xmlns:converters="clr-namespace:Company.Converters"
         xmlns:Controls="clr-namespace:Company.Controls;assembly=Company.Controls" x:Class="Company.MainWindow"
         mc:Ignorable="d"
         x:Name="CompanyMainWindow"
         Title="Моя компания" Height="450" Width="840.803">
+    <Window.Resources>
+        <converters:DepartmentConverter x:Key="departmentConverter"/>
+    </Window.Resources>
     <Grid Margin="0,0,-6.4,1">
         <ListView x:Name="companyListView" 
+                  ItemsSource="{Binding EmployeeList}"
+                  SelectedItem="{Binding SelectedEmployee}"
                   SelectionMode="Single"
                   Height="400" Margin="10,10,351.8,9" SelectionChanged="companyListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="150"  Header="Отдел"
-                                    DisplayMemberBinding="{Binding Department}"/>
+                                    DisplayMemberBinding="{Binding Department, Converter={StaticResource departmentConverter}}"/>
                     <GridViewColumn Width="200"  Header="Сотрудник"
                                     DisplayMemberBinding="{Binding NameAndSurname}"/>
                 </GridView>

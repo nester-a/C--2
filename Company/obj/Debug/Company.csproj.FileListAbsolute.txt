@@ -20,3 +20,4 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\bin\Debug\Company.C
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\bin\Debug\Company.Controls.pdb
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\AddEmployeeChildWindow.g.cs
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\AddEmployeeChildWindow.baml
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company\obj\Debug\GeneratedInternalTypeHelper.g.cs
