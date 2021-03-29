@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Phonebook.Controls.ContactControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Phonebook.Controls"
+             mc:Ignorable="d" d:DesignWidth="421.59">
+    <Grid Height="307" Margin="0,0,0.5,0">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#FF126DDB" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+        </Grid.Resources>
+        <TextBox x:Name="tbFirstName" Text="{Binding Contact.FirstName}" Height="23" Margin="120,91,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" TabIndex="2"/>
+        <TextBox x:Name="tbSecondName" Text="{Binding Contact.SecondName}" Height="23" Margin="120,155,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" TabIndex="4"/>
+        <TextBox x:Name="tbLastName" Text="{Binding Contact.LastName}" Height="23" Margin="120,123,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" TabIndex="3"/>
+        <Label x:Name="label" Content="Имя:" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Отчество:" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Фамилия:" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPhone" Text="{Binding Contact.Phone}" IsReadOnly="True" Height="23" Margin="120,13,0.5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Background="#FFF1EFEF" TabIndex="0">
+            <TextBox.Style>
+                <Style>
+                    <Setter Property="TextBlock.FontSize" Value="14" />
+                    <Setter Property="TextBlock.FontWeight" Value="SemiBold" />
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label x:Name="label1_Copy" Content="Номер телефона:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbLocked" IsChecked="{Binding Contact.Locked}" Content="Контакт заблокирован" HorizontalAlignment="Left" Margin="120,183,0,0" VerticalAlignment="Top" TabIndex="5"/>
+        <ComboBox x:Name="cbCatagory" ItemsSource="{Binding CategoryList}" Text="{Binding Contact.Category}" Margin="120,41,0,0" VerticalAlignment="Top" TabIndex="1"/>
+        <TextBox x:Name="tbComment" Margin="0,210,0,0" Text="{Binding Contact.Comment}" TextWrapping="Wrap" TabIndex="6" Height="90" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>
