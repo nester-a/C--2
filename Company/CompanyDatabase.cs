@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,19 +11,20 @@ namespace Company
 {
     class CompanyDatabase
     {
+        public const string ConnectionString = "Data Source=localhost;Initial Catalog=Company;User ID=CompanyRoot;Password=12345";
+
         public ObservableCollection<Employee> list { get; private set; }
         private static Random random = new Random();
         private const int CHAR_BOUND_L = 65;
         private const int CHAR_BOUND_H = 90;
+        private static int employeeID = 1;
 
         public CompanyDatabase()
         {
             list = new ObservableCollection<Employee>();
-            AddEmployees(50);
-        }
-        public void AddEmployee(Employee employee)
-        {
-            list.Add(employee);
+            AddEmployees(10);
+            SyncToDatabase();
+            //LoadFromDatabase();
         }
         public void AddEmployee()
         {
@@ -52,6 +54,99 @@ namespace Company
             for (int i = 0; i < amount; i++)
             {
                 AddEmployee();
+            }
+        }
+
+        //для работы с СУБД
+        public int Add(Employee employee)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+
+                string sqlQuery = $@"INSERT INTO CompanyEmployees (Department, Name, Surname, Comment)
+                                    VALUES ({(int)employee.Department},'{employee.Name}','{employee.Surname}','{employee.Comment}')";
+
+                var command = new SqlCommand(sqlQuery, connection);
+                var res = command.ExecuteNonQuery();
+                if (res > 0)
+                {
+                    //list.Add(employee);
+                }
+                return res;
+            }
+        }
+        public int Remove(Employee employee)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string sqlQuery = $@"DELETE FROM CompanyEmployees WHERE Name = '{employee.Name}'";
+
+                var command = new SqlCommand(sqlQuery, connection);
+                var res = command.ExecuteNonQuery();
+                if (res > 0)
+                {
+                    list.Remove(employee);
+                }
+                return res;
+            }
+        }
+
+        public int Update(Employee employee)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string sqlQuery = $@"UPDATE CompanyEmployees  SET
+                                                    Department={(int)employee.Department},
+                                                    Name='{employee.Name}',
+                                                    Surname='{employee.Surname}',
+                                                    Comment='{employee.Comment}'
+                                                    WHERE Name='{employee.Name}'";
+
+                var command = new SqlCommand(sqlQuery, connection);
+                return command.ExecuteNonQuery();
+            }
+        }
+
+        private void LoadFromDatabase()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string sqlQuery = $@"SELECT * FROM CompanyEmployees";
+
+                var command = new SqlCommand(sqlQuery, connection);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            var employee = new Employee()
+                            {
+                                Department = (Department)reader.GetInt32(0),
+                                Name = reader.GetValue(1).ToString(),
+                                Surname = reader["Surname"].ToString(),
+                                Comment = reader["Comment"].ToString()
+                            };
+                            list.Add(employee);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void SyncToDatabase()
+        {
+            foreach (var employee in list)
+            {
+                Add(employee);
             }
         }
     }

@@ -20,6 +20,8 @@
                   Height="400" Margin="10,10,351.8,9" SelectionChanged="companyListView_SelectionChanged">
             <ListView.View>
                 <GridView>
+                    <!--<GridViewColumn Width="50"  Header="ID"
+                                    DisplayMemberBinding="{Binding Id}"/>-->
                     <GridViewColumn Width="150"  Header="Отдел"
                                     DisplayMemberBinding="{Binding Department, Converter={StaticResource departmentConverter}}"/>
                     <GridViewColumn Width="200"  Header="Сотрудник"

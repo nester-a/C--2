@@ -10,6 +10,7 @@ namespace Company.Data
 {
     public class Employee : INotifyPropertyChanged, ICloneable
     {
+        int _id;
         string _name;
         string _surname;
         Department _department;
@@ -17,6 +18,15 @@ namespace Company.Data
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public int Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                NotifyPropertyChanged();
+            }
+        }
         public string Name
         {
             get => _name;

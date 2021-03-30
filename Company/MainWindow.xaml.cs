@@ -47,7 +47,13 @@ namespace Company
             {
                 return;
             }
-            EmployeeList[EmployeeList.IndexOf(SelectedEmployee)] = employeeControl.Employee;
+            //EmployeeList[EmployeeList.IndexOf(SelectedEmployee)] = employeeControl.Employee;
+            
+            if (company.Update(employeeControl.Employee) > 0)
+            {
+                MessageBox.Show("Запись успешно обновлена", "Обновление записи", MessageBoxButton.OK, MessageBoxImage.Information);
+                EmployeeList[EmployeeList.IndexOf(SelectedEmployee)] = employeeControl.Employee;
+            }
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -57,7 +63,11 @@ namespace Company
             }
             if (MessageBox.Show("Вы действительно желаете удалить данные сотрудника?", "Удаление данных сотрудника", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                company.list.Remove((Employee)companyListView.SelectedItems[0]);
+                if (company.Remove((Employee)companyListView.SelectedItems[0]) > 0)
+                {
+                    MessageBox.Show("Запись успешно удалена", "Удаление записи", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                //company.list.Remove((Employee)companyListView.SelectedItems[0]);
             }
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -65,8 +75,11 @@ namespace Company
             AddEmployee addEmployee = new AddEmployee();
             if (addEmployee.ShowDialog() == true)
             {
-                //в окне добавления нового сотрудника и в контроле сотрудника оставил комментарии, по работе события добавления
-                company.AddEmployee(addEmployee.NewEmployee);
+                if (company.Add(addEmployee.NewEmployee) > 0)
+                {
+                    MessageBox.Show("Запись успешно добавлена", "Добавление записи", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                //company.list.Add(addEmployee.NewEmployee);
             }
         }
     }
