@@ -66,8 +66,9 @@ namespace Company.Data
         public string NameAndSurname { get => $"{Name} {Surname}"; }
 
         public Employee() { }
-        public Employee(string name, string surname, Department department)
+        public Employee(int id, string name, string surname, Department department)
         {
+            Id = id;
             Name = name;
             Surname = surname;
             Department = department;

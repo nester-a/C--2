@@ -22,9 +22,9 @@ namespace Company
         public CompanyDatabase()
         {
             list = new ObservableCollection<Employee>();
-            AddEmployees(10);
-            SyncToDatabase();
-            //LoadFromDatabase();
+            //AddEmployees(10);
+            //SyncToDatabase();
+            LoadFromDatabase();
         }
         public void AddEmployee()
         {
@@ -32,7 +32,8 @@ namespace Company
             string surName = GenerateSymbols(random.Next(4, 9));
             Department department = GenerateDepartment();
 
-            list.Add(new Employee(name, surName, department));
+            list.Add(new Employee(employeeID, name, surName, department));
+            employeeID++;
         }
         private string GenerateSymbols(int amount)
         {
@@ -65,14 +66,15 @@ namespace Company
                 connection.Open();
 
 
-                string sqlQuery = $@"INSERT INTO CompanyEmployees (Department, Name, Surname, Comment)
-                                    VALUES ({(int)employee.Department},'{employee.Name}','{employee.Surname}','{employee.Comment}')";
+                string sqlQuery = $@"INSERT INTO Employees (EmployeeId, Department, Name, Surname, Comment)
+                                    VALUES ({employeeID},{(int)employee.Department},'{employee.Name}','{employee.Surname}','{employee.Comment}')";
 
                 var command = new SqlCommand(sqlQuery, connection);
                 var res = command.ExecuteNonQuery();
                 if (res > 0)
                 {
-                    //list.Add(employee);
+                    list.Add(employee);
+                    employeeID++;
                 }
                 return res;
             }
@@ -83,7 +85,7 @@ namespace Company
             {
                 connection.Open();
 
-                string sqlQuery = $@"DELETE FROM CompanyEmployees WHERE Name = '{employee.Name}'";
+                string sqlQuery = $@"DELETE FROM Employees WHERE EmployeeId = '{employee.Id}'";
 
                 var command = new SqlCommand(sqlQuery, connection);
                 var res = command.ExecuteNonQuery();
@@ -101,12 +103,12 @@ namespace Company
             {
                 connection.Open();
 
-                string sqlQuery = $@"UPDATE CompanyEmployees  SET
+                string sqlQuery = $@"UPDATE Employees  SET
                                                     Department={(int)employee.Department},
                                                     Name='{employee.Name}',
                                                     Surname='{employee.Surname}',
                                                     Comment='{employee.Comment}'
-                                                    WHERE Name='{employee.Name}'";
+                                                    WHERE EmployeeId='{employee.Id}'";
 
                 var command = new SqlCommand(sqlQuery, connection);
                 return command.ExecuteNonQuery();
@@ -119,7 +121,7 @@ namespace Company
             {
                 connection.Open();
 
-                string sqlQuery = $@"SELECT * FROM CompanyEmployees";
+                string sqlQuery = $@"SELECT * FROM Employees";
 
                 var command = new SqlCommand(sqlQuery, connection);
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -130,13 +132,16 @@ namespace Company
                         {
                             var employee = new Employee()
                             {
-                                Department = (Department)reader.GetInt32(0),
-                                Name = reader.GetValue(1).ToString(),
+                                Id = reader.GetInt32(0),
+                                Department = (Department)reader.GetInt32(1),
+                                Name = reader.GetValue(2).ToString(),
                                 Surname = reader["Surname"].ToString(),
                                 Comment = reader["Comment"].ToString()
                             };
+                            employeeID = employee.Id;
                             list.Add(employee);
                         }
+                        employeeID++;
                     }
                 }
             }
