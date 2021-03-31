@@ -1,0 +1,43 @@
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\bin\Debug\Phonebook.Controls.dll
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\bin\Debug\Phonebook.Controls.pdb
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\bin\Debug\Phonebook.Data.dll
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\bin\Debug\Phonebook.Data.pdb
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls.csprojAssemblyReference.cache
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\ContactControl.g.cs
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.cache
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.lref
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\ContactControl.baml
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls.g.resources
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls.dll.licenses
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CoreCompileInputs.cache
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CopyComplete
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls.dll
+C:\sources\geekbrains\C# Уровень 2\Урок 5\Lesson5\Phonebook.Controls\obj\Debug\Phonebook.Controls.pdb
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Controls.dll
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Controls.pdb
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Data.dll
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Data.pdb
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.csprojAssemblyReference.cache
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\ContactControl.g.cs
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.cache
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.lref
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\ContactControl.baml
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.g.resources
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CoreCompileInputs.cache
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CopyComplete
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.dll
+C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.pdb
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Controls.dll
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Controls.pdb
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Data.dll
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\bin\Debug\Phonebook.Data.pdb
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.csprojAssemblyReference.cache
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\ContactControl.g.cs
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.cache
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.lref
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\ContactControl.baml
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.g.resources
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CoreCompileInputs.cache
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CopyComplete
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.dll
+C:\Users\neste\OneDrive\Рабочий стол\Lesson6\Phonebook.Controls\obj\Debug\Phonebook.Controls.pdb

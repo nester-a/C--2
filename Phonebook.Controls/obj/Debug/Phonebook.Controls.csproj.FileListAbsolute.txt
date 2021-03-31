@@ -1,0 +1,14 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\bin\Debug\Phonebook.Controls.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\bin\Debug\Phonebook.Controls.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\bin\Debug\Phonebook.Data.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\bin\Debug\Phonebook.Data.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls.csprojAssemblyReference.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\ContactControl.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls_MarkupCompile.lref
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\ContactControl.baml
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls.g.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls.csproj.CopyComplete
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Controls\obj\Debug\Phonebook.Controls.pdb

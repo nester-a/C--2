@@ -1,0 +1,5 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Data\bin\Debug\Phonebook.Data.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Data\bin\Debug\Phonebook.Data.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Data\obj\Debug\Phonebook.Data.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Data\obj\Debug\Phonebook.Data.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Data\obj\Debug\Phonebook.Data.pdb
