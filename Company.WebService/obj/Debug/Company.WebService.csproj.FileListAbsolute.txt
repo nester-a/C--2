@@ -56,3 +56,6 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.WebService\obj\Debu
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.WebService\obj\Debug\Company.WebService.csproj.CopyComplete
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.WebService\obj\Debug\Company.WebService.dll
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.WebService\obj\Debug\Company.WebService.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.WebService\bin\Company.Data.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.WebService\bin\Company.Data.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.WebService\obj\Debug\Company.WebService.csprojAssemblyReference.cache
