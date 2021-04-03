@@ -1,0 +1,6 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Communication\bin\Debug\Company.Communication.dll.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Communication\bin\Debug\Company.Communication.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Communication\bin\Debug\Company.Communication.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Communication\obj\Debug\Company.Communication.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Communication\obj\Debug\Company.Communication.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Communication\obj\Debug\Company.Communication.pdb

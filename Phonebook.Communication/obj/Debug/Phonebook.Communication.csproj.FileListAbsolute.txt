@@ -1,0 +1,6 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Communication\bin\Debug\Phonebook.Communication.dll.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Communication\bin\Debug\Phonebook.Communication.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Communication\bin\Debug\Phonebook.Communication.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Communication\obj\Debug\Phonebook.Communication.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Communication\obj\Debug\Phonebook.Communication.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Phonebook.Communication\obj\Debug\Phonebook.Communication.pdb

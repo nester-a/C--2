@@ -1,0 +1,15 @@
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01.csprojAssemblyReference.cache
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\MainWindow.g.cs
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\App.g.cs
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01_MarkupCompile.cache
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01_MarkupCompile.lref
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\bin\Debug\SApp01.exe.config
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\bin\Debug\SApp01.exe
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\bin\Debug\SApp01.pdb
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\MainWindow.baml
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01.g.resources
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01.Properties.Resources.resources
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01.csproj.GenerateResource.cache
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01.csproj.CoreCompileInputs.cache
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01.exe
+C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\SApp01\obj\Debug\SApp01.pdb

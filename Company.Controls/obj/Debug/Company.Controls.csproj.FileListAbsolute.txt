@@ -1,0 +1,15 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\bin\Debug\Company.Controls.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\bin\Debug\Company.Controls.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls.csprojAssemblyReference.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\EmployeeControl.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls_MarkupCompile.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls_MarkupCompile.lref
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\EmployeeControl.baml
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls.g.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls.csproj.CopyComplete
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\obj\Debug\Company.Controls.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\bin\Debug\Company.Communication.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\bin\Debug\Company.Communication.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Controls\bin\Debug\Company.Communication.dll.config

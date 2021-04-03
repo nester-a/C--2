@@ -1,0 +1,15 @@
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\bin\Debug\WPFApp2.exe.config
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\bin\Debug\WPFApp2.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\bin\Debug\WPFApp2.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\MainWindow.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\App.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2_MarkupCompile.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2_MarkupCompile.lref
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\MainWindow.baml
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2.g.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2.Properties.Resources.resources
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2.csproj.GenerateResource.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2.exe
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\WPFApp2\obj\Debug\WPFApp2.pdb
