@@ -54,6 +54,7 @@
     <Compile Include="ContactControl.xaml.cs">
       <DependentUpon>ContactControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditorType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,9 +64,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Phonebook.Data\Phonebook.Data.csproj">
-      <Project>{2d2f2955-a410-47be-84c0-ba08a600133a}</Project>
-      <Name>Phonebook.Data</Name>
+    <ProjectReference Include="..\..\Phonebook.Communication\Phonebook.Communication.csproj">
+      <Project>{8ae50951-539f-4ada-bb94-760b6426d54e}</Project>
+      <Name>Phonebook.Communication</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

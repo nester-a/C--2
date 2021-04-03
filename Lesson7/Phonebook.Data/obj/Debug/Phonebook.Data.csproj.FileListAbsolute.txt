@@ -9,3 +9,8 @@ C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Data\obj\Deb
 C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Data\obj\Debug\Phonebook.Data.dll
 C:\sources\geekbrains\C# Уровень 2\sandbox\Lesson6\Phonebook.Data\obj\Debug\Phonebook.Data.pdb
 C:\sources\geekbrains\C# Уровень 2\Sandbox\Lesson6\Phonebook.Data\obj\Debug\Phonebook.Data.csprojAssemblyReference.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook.Data\bin\Debug\Phonebook.Data.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook.Data\bin\Debug\Phonebook.Data.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook.Data\obj\Debug\Phonebook.Data.csproj.CoreCompileInputs.cache
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook.Data\obj\Debug\Phonebook.Data.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook.Data\obj\Debug\Phonebook.Data.pdb

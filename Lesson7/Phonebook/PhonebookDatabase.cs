@@ -1,4 +1,4 @@
-﻿using Phonebook.Data;
+﻿using Phonebook.Communication.PhonebookService;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +10,7 @@ namespace Phonebook
 {
     public class PhonebookDatabase
     {
-        public const string ConnectionString = "Data Source=localhost;Initial Catalog=Phonebook;User ID=PhonebookRoot;Password=12345";
+        PhonebookServiceSoapClient phonebookServiceSoapClient = new PhonebookServiceSoapClient();
 
         private static string[] PHONE_PREFIX = {"906", "495", "499"}; // Префексы телефонных номеров
         private static int CHAR_BOUND_L = 65; // Номер начального символа (для генерации последовательности символов)
@@ -37,94 +37,34 @@ namespace Phonebook
 
         public int Add(Contact contact)
         {
-            using(SqlConnection connection = new SqlConnection(ConnectionString))
+            var res = phonebookServiceSoapClient.Add(contact);
+            if (res > 0)
             {
-                connection.Open();
-
-                var locked = contact.Locked ? 1 : 0;
-                string sqlQuery = $@"INSERT INTO Contacts (Phone, LastName, FirstName, SecondName, Comment, Locked, CategoryId)
-                                    VALUES ('{contact.Phone}','{contact.LastName}','{contact.FirstName}','{contact.SecondName}','{contact.Comment}',
-                                    {locked}, {(int)contact.Category})";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                var res = command.ExecuteNonQuery();
-                if (res > 0)
-                {
-                    Contacts.Add(contact);
-                }
-                return res;
+                Contacts.Add(contact);
             }
+            return res;
         }
 
         public int Remove(Contact contact)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            var res = phonebookServiceSoapClient.Remove(contact);
+            if (res > 0)
             {
-                connection.Open();
-
-                var locked = contact.Locked ? 1 : 0;
-                string sqlQuery = $@"DELETE FROM Contacts WHERE Phone = '{contact.Phone}'";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                var res = command.ExecuteNonQuery();
-                if (res > 0)
-                {
-                    Contacts.Remove(contact);
-                }
-                return res;
+                Contacts.Remove(contact);
             }
+            return res;
         }
 
         public int Update(Contact contact)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-
-                var locked = contact.Locked ? 1 : 0;
-                string sqlQuery = $@"UPDATE Contacts  SET
-                                                    LastName='{contact.LastName}',
-                                                    FirstName='{contact.FirstName}',
-                                                    SecondName='{contact.SecondName}',
-                                                    Comment='{contact.Comment}',
-                                                    Locked={locked},
-                                                    CategoryId={(int)contact.Category}
-                                                    WHERE Phone = '{contact.Phone}'";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                return command.ExecuteNonQuery();
-            }
+            return phonebookServiceSoapClient.Update(contact);
         }
 
         private void LoadFromDatabase()
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            foreach (var contact in phonebookServiceSoapClient.Load())
             {
-                connection.Open();
-
-                string sqlQuery = $@"SELECT * FROM Contacts";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            var contact = new Contact()
-                            {
-                                Phone = reader.GetValue(0).ToString(),
-                                LastName = reader["LastName"].ToString(),
-                                FirstName = reader.GetString(2),
-                                SecondName = reader["SecondName"].ToString(),
-                                Comment = reader["Comment"].ToString(),
-                                Locked = reader.GetBoolean(5),
-                                Category = (ContactCategory)reader.GetInt32(6)
-                            };
-                            Contacts.Add(contact);
-                        }
-                    }
-                }
+                Contacts.Add(contact);
             }
         }
 

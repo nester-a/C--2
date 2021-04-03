@@ -3,4 +3,3 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Data\bin\Debug\Comp
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Data\obj\Debug\Company.Data.csproj.CoreCompileInputs.cache
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Data\obj\Debug\Company.Data.dll
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Data\obj\Debug\Company.Data.pdb
-C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Company.Data\obj\Debug\Company.Data.csprojAssemblyReference.cache

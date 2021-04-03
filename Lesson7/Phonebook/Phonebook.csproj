@@ -110,13 +110,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Phonebook.Communication\Phonebook.Communication.csproj">
+      <Project>{8ae50951-539f-4ada-bb94-760b6426d54e}</Project>
+      <Name>Phonebook.Communication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Phonebook.Controls\Phonebook.Controls.csproj">
       <Project>{C75DE69E-778F-410B-94B9-99F7B5218127}</Project>
       <Name>Phonebook.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Phonebook.Data\Phonebook.Data.csproj">
-      <Project>{2d2f2955-a410-47be-84c0-ba08a600133a}</Project>
-      <Name>Phonebook.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\SApp01.Controls\SApp01.Controls.csproj">
       <Project>{c21bdc38-b85a-4a48-abd7-7f6aec8d34bc}</Project>

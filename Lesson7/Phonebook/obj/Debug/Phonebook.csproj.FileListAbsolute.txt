@@ -72,9 +72,7 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.exe
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.pdb
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.Controls.dll
-C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.Data.dll
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.Controls.pdb
-C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.Data.pdb
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\obj\Debug\Phonebook.csprojAssemblyReference.cache
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\obj\Debug\ContactEditor.g.cs
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\obj\Debug\MainWindow.g.cs
@@ -91,3 +89,6 @@ C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\obj\Debug
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\obj\Debug\Phonebook.csproj.CopyComplete
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\obj\Debug\Phonebook.exe
 C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\obj\Debug\Phonebook.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.Communication.dll
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.Communication.pdb
+C:\Aleksey\Development\Курс GeekBrains\C#-2\C#-2\Lesson7\Phonebook\bin\Debug\Phonebook.Communication.dll.config

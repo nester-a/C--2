@@ -1,4 +1,5 @@
-﻿using Phonebook.Data;
+﻿using Phonebook.Communication.PhonebookService;
+using Phonebook.Controls;
 using System.Windows;
 
 namespace Phonebook
