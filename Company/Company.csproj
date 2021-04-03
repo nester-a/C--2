@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -104,13 +105,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Company.Communication\Company.Communication.csproj">
+      <Project>{8979f038-555a-45da-ab9c-55ff4d974432}</Project>
+      <Name>Company.Communication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Company.Controls\Company.Controls.csproj">
       <Project>{fa539be7-4b0b-4785-a95e-b5392c145ccd}</Project>
       <Name>Company.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Company.Data\Company.Data.csproj">
-      <Project>{24ece56e-ed14-40b9-834f-3d9c7a84c963}</Project>
-      <Name>Company.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

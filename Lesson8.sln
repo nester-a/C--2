@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company", "Company\Company.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework8", "Homework8", "{5E645CB6-524D-42C2-AF1D-4856A9F479B1}"
 	ProjectSection(SolutionItems) = preProject
-		Homework7.txt = Homework7.txt
+		Database.txt = Database.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Data", "Company.Data\Company.Data.csproj", "{24ECE56E-ED14-40B9-834F-3D9C7A84C963}"
@@ -27,6 +27,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phonebook.Communication", "Phonebook.Communication\Phonebook.Communication.csproj", "{8AE50951-539F-4ADA-BB94-760B6426D54E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D9B2F88B-5929-4BED-8073-01BF05769801} = {D9B2F88B-5929-4BED-8073-01BF05769801}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Communication", "Company.Communication\Company.Communication.csproj", "{8979F038-555A-45DA-AB9C-55FF4D974432}"
+	ProjectSection(ProjectDependencies) = postProject
+		{513853CA-AAA9-4722-AD24-1574D83A07B7} = {513853CA-AAA9-4722-AD24-1574D83A07B7}
 	EndProjectSection
 EndProject
 Global
@@ -71,6 +76,10 @@ Global
 		{8AE50951-539F-4ADA-BB94-760B6426D54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE50951-539F-4ADA-BB94-760B6426D54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE50951-539F-4ADA-BB94-760B6426D54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8979F038-555A-45DA-AB9C-55FF4D974432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8979F038-555A-45DA-AB9C-55FF4D974432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8979F038-555A-45DA-AB9C-55FF4D974432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8979F038-555A-45DA-AB9C-55FF4D974432}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +89,7 @@ Global
 		{24ECE56E-ED14-40B9-834F-3D9C7A84C963} = {5E645CB6-524D-42C2-AF1D-4856A9F479B1}
 		{FA539BE7-4B0B-4785-A95E-B5392C145CCD} = {5E645CB6-524D-42C2-AF1D-4856A9F479B1}
 		{513853CA-AAA9-4722-AD24-1574D83A07B7} = {5E645CB6-524D-42C2-AF1D-4856A9F479B1}
+		{8979F038-555A-45DA-AB9C-55FF4D974432} = {5E645CB6-524D-42C2-AF1D-4856A9F479B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E758CFA-5676-4254-8A22-1055569BAACD}

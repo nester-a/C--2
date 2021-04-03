@@ -1,17 +1,14 @@
-﻿using Company.Data;
+﻿using Company.Communication.CompanyService;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Company
 {
     class CompanyDatabase
     {
-        public const string ConnectionString = "Data Source=localhost;Initial Catalog=Company;User ID=CompanyRoot;Password=12345";
+        CompanyServiceSoapClient companyServiceSoapClient = new CompanyServiceSoapClient();
 
         public ObservableCollection<Employee> list { get; private set; }
         private static Random random = new Random();
@@ -22,8 +19,6 @@ namespace Company
         public CompanyDatabase()
         {
             list = new ObservableCollection<Employee>();
-            //AddEmployees(10);
-            //SyncToDatabase();
             LoadFromDatabase();
         }
         public void AddEmployee()
@@ -58,100 +53,37 @@ namespace Company
             }
         }
 
-        //для работы с СУБД
+
         public int Add(Employee employee)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            var res = companyServiceSoapClient.Add(employee);
+            if (res > 0)
             {
-                connection.Open();
-
-
-                string sqlQuery = $@"INSERT INTO Employees (EmployeeId, Department, Name, Surname, Comment)
-                                    VALUES ({employeeID},{(int)employee.Department},'{employee.Name}','{employee.Surname}','{employee.Comment}')";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                var res = command.ExecuteNonQuery();
-                if (res > 0)
-                {
-                    list.Add(employee);
-                    employeeID++;
-                }
-                return res;
+                list.Add(employee);
+                employeeID++;
             }
+            return res;
         }
         public int Remove(Employee employee)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            var res = companyServiceSoapClient.Remove(employee);
+            if (res > 0)
             {
-                connection.Open();
-
-                string sqlQuery = $@"DELETE FROM Employees WHERE EmployeeId = '{employee.Id}'";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                var res = command.ExecuteNonQuery();
-                if (res > 0)
-                {
-                    list.Remove(employee);
-                }
-                return res;
+                list.Remove(employee);
             }
+            return res;
         }
 
         public int Update(Employee employee)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-
-                string sqlQuery = $@"UPDATE Employees  SET
-                                                    Department={(int)employee.Department},
-                                                    Name='{employee.Name}',
-                                                    Surname='{employee.Surname}',
-                                                    Comment='{employee.Comment}'
-                                                    WHERE EmployeeId='{employee.Id}'";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                return command.ExecuteNonQuery();
-            }
+            return companyServiceSoapClient.Update(employee);
         }
 
         private void LoadFromDatabase()
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            foreach (var employee in companyServiceSoapClient.Load())
             {
-                connection.Open();
-
-                string sqlQuery = $@"SELECT * FROM Employees";
-
-                var command = new SqlCommand(sqlQuery, connection);
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            var employee = new Employee()
-                            {
-                                Id = reader.GetInt32(0),
-                                Department = (Department)reader.GetInt32(1),
-                                Name = reader.GetValue(2).ToString(),
-                                Surname = reader["Surname"].ToString(),
-                                Comment = reader["Comment"].ToString()
-                            };
-                            employeeID = employee.Id;
-                            list.Add(employee);
-                        }
-                        employeeID++;
-                    }
-                }
-            }
-        }
-
-        public void SyncToDatabase()
-        {
-            foreach (var employee in list)
-            {
-                Add(employee);
+                list.Add(employee);
             }
         }
     }
